@@ -22,11 +22,11 @@
 <div class="user-profile-header tag-header" style="background-color:<%= @tag.bg_color_hex %>;color:<%= @tag.text_color_hex %>;">
   <div class="slanty-accent"></div>
   <div class="tag-or-query-header-container tag-edit-tag">
-    <h1> Editing:
+    <h1> Düzenleniyor:
       <a href="/t/<%= @tag.name %>" style="color: <%= @tag.text_color_hex %>;text-decoration: underline;"><%= @tag.name %></a>
     </h1>
     <p>
-      <code style="background-color: #D2D2D2; color: black; padding: 5px; border-radius: 5px;">#<%= @tag.name %></code> is the name of the tag used in Markdown.
+      <code style="background-color: #D2D2D2; color: black; padding: 5px; border-radius: 5px;">#<%= @tag.name %></code> markdownda kullanılan etikettir.
     </p>
   </div>
 </div>
@@ -45,40 +45,40 @@
     <% end %>
     <h4>
       <a target="_blank" rel="noopener" href="https://thepracticaldev.s3.amazonaws.com/i/cc8vz48djnhty6c31jog.png">
-        Click here to see an example of attributes.
+        Özniteliklerin bir örneğini görmek için burayı tıklayın.
       </a>
     </h4>
     <div class="tag-form-field">
       <%= label_tag :pretty_name %>
       <br>
-      <%= text_field_tag "tag[pretty_name]", @tag.pretty_name, placeholder: "This is the name at the top of the show page.", class: "tag-form-text-field" %>
+      <%= text_field_tag "tag[pretty_name]", @tag.pretty_name, placeholder: "Bu, gösteri sayfasının üst kısmındaki addır.", class: "tag-form-text-field" %>
     </div>
     <div class="tag-form-field">
       <%= label_tag :bg_color_hex %>
       <br>
-      <%= text_field_tag "tag[bg_color_hex]", @tag.bg_color_hex, placeholder: "Click for color picker", class: "tag-form-text-field color-picker" %>
+      <%= text_field_tag "tag[bg_color_hex]", @tag.bg_color_hex, placeholder: "Renk seçici için tıklayın", class: "tag-form-text-field color-picker" %>
       <div class="color-palette"></div>
     </div>
     <div class="tag-form-field">
       <%= label_tag :text_color_hex %>
       <br>
-      <%= text_field_tag "tag[text_color_hex]", @tag.text_color_hex, placeholder: "Click for color picker", class: "tag-form-text-field color-picker" %>
+      <%= text_field_tag "tag[text_color_hex]", @tag.text_color_hex, placeholder: "Renk seçici için tıklayın", class: "tag-form-text-field color-picker" %>
       <div class="color-palette"></div>
     </div>
     <div class="tag-form-field">
       <%= label_tag :short_summary %>
       <br>
-      <%= text_area_tag "tag[short_summary]", @tag.short_summary, placeholder: "Brief overview of what this tag is all about.", class: "tag-form-text-field tag-area-text" %>
+      <%= text_area_tag "tag[short_summary]", @tag.short_summary, placeholder: "Bu etiketin neyle ilgili olduğuna dair kısa bir genel bakış.", class: "tag-form-text-field tag-area-text" %>
     </div>
     <div class="tag-form-field">
       <%= label_tag :wiki_body_markdown %>
       <br>
-      <%= text_area_tag "tag[wiki_body_markdown]", @tag.wiki_body_markdown, placeholder: "This is an 'about' section. Feel free to add an FAQ, additional resources, etc.", class: "tag-form-text-field tag-area-text" %>
+      <%= text_area_tag "tag[wiki_body_markdown]", @tag.wiki_body_markdown, placeholder: "Bu bir 'hakkında' bölümüdür. Bir SSS, ek kaynaklar vb. Eklemekten çekinmeyin..", class: "tag-form-text-field tag-area-text" %>
     </div>
     <div class="tag-form-field">
       <%= label_tag :rules_markdown %>
       <br>
-      <%= text_area_tag "tag[rules_markdown]", @tag.rules_markdown, placeholder: "Optional - Can be used for challenges, i.e. submission guidelines.", class: "tag-form-text-field tag-area-text" %>
+      <%= text_area_tag "tag[rules_markdown]", @tag.rules_markdown, placeholder: "İsteğe bağlı - Zorluklar için kullanılabilir, ör. Gönderim yönergeleri.", class: "tag-form-text-field tag-area-text" %>
     </div>
     <div class="tag-form-field">
       <%= submit_tag "SAVE CHANGES", class: "tag-edit-submit" %>

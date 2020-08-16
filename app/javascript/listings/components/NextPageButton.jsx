@@ -5,7 +5,7 @@ import { Button } from '@crayons';
 const NextPageButton = ({ onClick }) => (
   <div className="flex justify-center">
     <Button variant="secondary" onClick={onClick} type="button">
-      Load more...
+      Daha fazla yükle...
     </Button>
   </div>
 );

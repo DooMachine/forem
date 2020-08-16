@@ -19,7 +19,7 @@ const Membership = ({
         data-membership-id={membership.membership_id}
         data-role="mod"
       >
-        Promote to Mod
+        Mod'a Yükselt
       </Button>
     ) : null;
 
@@ -32,7 +32,7 @@ const Membership = ({
         data-membership-id={membership.membership_id}
         data-role="member"
       >
-        Remove Mod
+        Modluğu Kaldır
       </Button>
     ) : null;
 

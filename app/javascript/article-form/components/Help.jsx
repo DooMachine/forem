@@ -45,16 +45,15 @@ export class Help extends Component {
         data-testid="title-help"
         className="crayons-article-form__help crayons-article-form__help--title"
       >
-        <h4 className="mb-2 fs-l">Writing a Great Post Title</h4>
+        <h4 className="mb-2 fs-l">Buraya güzel bir başlık yaz!</h4>
         <ul className="list-disc pl-6 color-base-70">
           <li>
-            Think of your post title as a super short (but compelling!)
-            description — like an overview of the actual post in one short
-            sentence.
+            Gönderi başlığınızı kısa (ama ikna edici!) bir açıklama,
+            tek bir kısa metin ile bütün gönderiye kuşbakışı olaracak 
+            şekilde yazın.
           </li>
           <li>
-            Use keywords where appropriate to help ensure people can find your
-            post by search.
+            İnsanların arama ile bulabilecekleri kelimeleri kullanmaya dikkat edin.
           </li>
         </ul>
       </div>
@@ -67,21 +66,18 @@ export class Help extends Component {
         data-testid="basic-tag-input-help"
         className="crayons-article-form__help crayons-article-form__help--tags"
       >
-        <h4 className="mb-2 fs-l">Tagging Guidelines</h4>
+        <h4 className="mb-2 fs-l">Etiketleme rehberi</h4>
         <ul className="list-disc pl-6 color-base-70">
-          <li>Tags help people find your post.</li>
+          <li>Etiketler, kullanıcıların gönderinizi bulmasına yardımcı olur.</li>
           <li>
-            Think of tags as the topics or categories that best describe your
-            post.
+            Etiketleri, gönderinizi en iyi tanımlayan konular veya kategoriler olarak düşünün.            
           </li>
           <li>
-            Add up to four tags per post. Combine tags to reach the appropriate
-            subcommunities.
+            Gönderi başına dörde kadar etiket ekleyin. Uygun alt topluluklara ulaşmak için etiketleri birleştirin.
           </li>
-          <li>Use existing tags whenever possible.</li>
+          <li>Mümkün olduğunda mevcut etiketleri kullanın.</li>
           <li>
-            Some tags, such as “help” or “healthydebate”, have special posting
-            guidelines.
+            "Yardım" veya "sağlık davası" gibi bazı etiketlerin özel gönderme yöntemleri vardır.
           </li>
         </ul>
       </div>
@@ -94,13 +90,13 @@ export class Help extends Component {
         data-testid="basic-editor-help"
         className="crayons-card crayons-card--secondary p-4 mb-6"
       >
-        You are currently using the basic markdown editor that uses{' '}
+        Şu anda kullanan temel markdown düzenleyicisini kullanıyorsunuz{' '}
         <a href="#frontmatter" onClick={this.toggleModal('frontmatterShowing')}>
           Jekyll front matter
         </a>
-        . You can also use the <em>rich+markdown</em> editor you can find in{' '}
+        .Ayrıca{' '} 
         <a href="/settings/ux">
-          UX settings
+          UX ayarlarında
           <svg
             width="24"
             height="24"
@@ -111,11 +107,12 @@ export class Help extends Component {
             aria-labelledby="c038a36b2512ed25db907e179ab45cfc"
           >
             <title id="c038a36b2512ed25db907e179ab45cfc">
-              Open UX settings
+              UX ayarlarını aç
             </title>
             <path d="M10.667 8v1.333H7.333v7.334h7.334v-3.334H16v4a.666.666 0 01-.667.667H6.667A.666.666 0 016 17.333V8.667A.667.667 0 016.667 8h4zM18 6v5.333h-1.333V8.275l-5.196 5.196-.942-.942 5.194-5.196h-3.056V6H18z" />
           </svg>
-        </a>
+        </a> bulabileceğiniz <em> zengin + markdown </em> düzenleyicisini de kullanabilirsiniz.
+        
         .
       </div>
     );
@@ -127,16 +124,15 @@ export class Help extends Component {
         data-testid="format-help"
         className="crayons-article-form__help crayons-article-form__help--body"
       >
-        <h4 className="mb-2 fs-l">Editor Basics</h4>
+        <h4 className="mb-2 fs-l">Editor Temelleri</h4>
         <ul className="list-disc pl-6 color-base-70">
           <li>
-            Use{' '}
             <a href="#markdown" onClick={this.toggleModal('markdownShowing')}>
               Markdown
             </a>{' '}
-            to write and format posts.
+            ile gönderilerinizi yazarak formatlayabilirsiniz.
             <details className="fs-s my-1">
-              <summary class="cursor-pointer">Commonly used syntax</summary>
+              <summary class="cursor-pointer">Yaygın olarak kullanılan sözdizimleri</summary>
               <table className="crayons-card crayons-card--secondary crayons-table crayons-table--compact w-100 mt-2 mb-4 lh-tight">
                 <tbody>
                   <tr>
@@ -229,11 +225,10 @@ export class Help extends Component {
             </details>
           </li>
           <li>
-            You can use{' '}
             <a href="#liquid" onClick={this.toggleModal('liquidShowing')}>
-              Liquid tags
+              Liquid tagları
             </a>{' '}
-            to add rich content such as Tweets, YouTube videos, etc.
+            kullanarak Tweet, Youtube videosu vb. ekleyebilirsiniz.
           </li>
         </ul>
       </div>
@@ -283,7 +278,7 @@ export class Help extends Component {
         {liquidShowing &&
           this.renderModal(
             this.toggleModal('liquidShowing'),
-            '🌊 Liquid Tags',
+            '🌊 Liquid Tagları',
             liquidHelpHTML,
           )}
 
@@ -312,4 +307,4 @@ Help.propTypes = {
   version: PropTypes.string.isRequired,
 };
 
-Help.displayName = 'Help';
+Help.displayName = 'Yardım';

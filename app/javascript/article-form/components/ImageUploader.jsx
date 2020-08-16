@@ -29,7 +29,7 @@ const ImageIcon = () => (
     role="img"
     aria-labelledby="a17qec5pfhrwzk9w4kg0tp62v27qqu9t"
   >
-    <title id="a17qec5pfhrwzk9w4kg0tp62v27qqu9t">Upload image</title>
+    <title id="a17qec5pfhrwzk9w4kg0tp62v27qqu9t">Resim yükle</title>
     <path d="M20 5H4v14l9.292-9.294a1 1 0 011.414 0L20 15.01V5zM2 3.993A1 1 0 012.992 3h18.016c.548 0 .992.445.992.993v16.014a1 1 0 01-.992.993H2.992A.993.993 0 012 20.007V3.993zM8 11a2 2 0 110-4 2 2 0 010 4z" />
   </svg>
 );
@@ -161,7 +161,7 @@ export const ImageUploader = () => {
     <div className="flex items-center">
       {uploadingImage ? (
         <span class="lh-base pl-3 border-0 py-2 inline-block">
-          <Spinner /> Uploading...
+          <Spinner /> Yükleniyor...
         </span>
       ) : (
         <Button
@@ -171,7 +171,7 @@ export const ImageUploader = () => {
           icon={ImageIcon}
           tabIndex="-1"
         >
-          Upload image
+          Resim yükle
           <input
             type="file"
             id="image-upload-field"
@@ -181,7 +181,7 @@ export const ImageUploader = () => {
             accept="image/*"
             data-max-file-size-mb="25"
             tabIndex="-1"
-            aria-label="Upload an image"
+            aria-label="Bir resim yükle"
           />
         </Button>
       )}

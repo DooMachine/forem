@@ -56,7 +56,7 @@ export class ArticleCoverImage extends Component {
   render() {
     const { mainImage } = this.props;
     const { uploadError, uploadErrorMessage, uploadingImage } = this.state;
-    const uploadLabel = mainImage ? 'Change' : 'Add a cover image';
+    const uploadLabel = mainImage ? 'Değiştir' : 'Kapak resmi ekle';
 
     return (
       <div className="crayons-article-form__cover" role="presentation">
@@ -66,13 +66,13 @@ export class ArticleCoverImage extends Component {
             className="crayons-article-form__cover__image"
             width="250"
             height="105"
-            alt="Post cover"
+            alt="Kapak resmi"
           />
         )}
         <div className="flex items-center">
           {uploadingImage ? (
             <span class="lh-base pl-1 border-0 py-2 inline-block">
-              <Spinner /> Uploading...
+              <Spinner /> Yükleniyor...
             </span>
           ) : (
             <>
@@ -92,7 +92,7 @@ export class ArticleCoverImage extends Component {
                   variant="ghost-danger"
                   onClick={this.triggerMainImageRemoval}
                 >
-                  Remove
+                  Kaldır
                 </Button>
               )}
             </>

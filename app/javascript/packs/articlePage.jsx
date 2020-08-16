@@ -53,7 +53,7 @@ const userDataIntervalID = setInterval(async () => {
       );
     } catch (e) {
       document.querySelector('#comment-subscription').innerHTML =
-        '<p className="color-accent-danger">Unable to load Comment Subscription component.<br />Try refreshing the page.</p>';
+        '<p className="color-accent-danger">Yorum Aboneliği bileşeni yüklenemiyor.<br />Sayfayı yenilemeyi deneyin.</p>';
     }
   }
 });

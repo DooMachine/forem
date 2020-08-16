@@ -39,7 +39,7 @@ describe('<ArticleCoverImage />', () => {
           onMainImageUrlChange={jest.fn()}
         />,
       );
-      const uploadInput = getByAltText('Post cover');
+      const uploadInput = getByAltText('Kapak resmi');
       expect(uploadInput.getAttribute('src')).toEqual('/some-fake-image.jpg');
     });
 
@@ -50,8 +50,8 @@ describe('<ArticleCoverImage />', () => {
           onMainImageUrlChange={jest.fn()}
         />,
       );
-      expect(queryByText('Change')).toBeDefined();
-      expect(queryByText('Remove')).toBeDefined();
+      expect(queryByText('Değiştir')).toBeDefined();
+      expect(queryByText('Kaldır')).toBeDefined();
     });
 
     it('removes an existing cover image', async () => {
@@ -63,13 +63,13 @@ describe('<ArticleCoverImage />', () => {
         />,
       );
 
-      expect(queryByText(/uploading.../i)).toBeNull();
+      expect(queryByText(/Yükleniyor.../i)).toBeNull();
 
-      expect(queryByLabelText('Add a cover image')).toBeNull();
-      expect(queryByLabelText('Post cover')).toBeDefined();
-      expect(queryByLabelText('Change')).toBeDefined();
+      expect(queryByLabelText('Kapak resmi ekle')).toBeNull();
+      expect(queryByLabelText('Kapak resmi')).toBeDefined();
+      expect(queryByLabelText('Değiştir')).toBeDefined();
 
-      const removeButton = getByText('Remove');
+      const removeButton = getByText('Kaldır');
       removeButton.click();
 
       expect(onMainImageUrlChange).toHaveBeenCalledTimes(1);
@@ -93,10 +93,10 @@ describe('<ArticleCoverImage />', () => {
         />,
       );
 
-      expect(queryByLabelText('Post cover')).toBeDefined();
+      expect(queryByLabelText('Kapak resmi')).toBeDefined();
       expect(queryByLabelText(/remove/i)).toBeDefined();
 
-      const inputEl = getByLabelText('Change');
+      const inputEl = getByLabelText('Değiştir');
       const file = new File(['(⌐□_□)'], 'chucknorris.png', {
         type: 'image/png',
       });
@@ -105,15 +105,15 @@ describe('<ArticleCoverImage />', () => {
       expect(inputEl.files[0]).toEqual(file);
       expect(inputEl.files).toHaveLength(1);
 
-      expect(queryByText(/uploading.../i)).toBeDefined();
-      expect(queryByLabelText('Post cover')).toBeNull();
-      expect(queryByLabelText('Change')).toBeNull();
+      expect(queryByText(/Yükleniyor.../i)).toBeDefined();
+      expect(queryByLabelText('Kapak resmi')).toBeNull();
+      expect(queryByLabelText('Değiştir')).toBeNull();
       expect(queryByLabelText(/remove/i)).toBeNull();
 
-      await waitForElementToBeRemoved(() => queryByText(/uploading.../i));
+      await waitForElementToBeRemoved(() => queryByText(/Yükleniyor.../i));
 
-      expect(queryByLabelText('Post cover')).toBeDefined();
-      expect(queryByLabelText('Change')).toBeDefined();
+      expect(queryByLabelText('Kapak resmi')).toBeDefined();
+      expect(queryByLabelText('Değiştir')).toBeDefined();
       expect(queryByLabelText(/remove/i)).toBeDefined();
 
       expect(onMainImageUrlChange).toHaveBeenCalledTimes(1);
@@ -128,7 +128,7 @@ describe('<ArticleCoverImage />', () => {
         onMainImageUrlChange={onMainImageUrlChange}
       />,
     );
-    const inputEl = getByLabelText('Change');
+    const inputEl = getByLabelText('Değiştir');
 
     // Check the input validation settings
     expect(inputEl.getAttribute('accept')).toEqual('image/*');

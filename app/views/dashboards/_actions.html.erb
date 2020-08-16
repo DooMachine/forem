@@ -1,58 +1,58 @@
 <nav class="hidden m:block">
   <a class="crayons-link crayons-link--block <%= "crayons-link--current" if params[:action] == "show" && (params[:which] == "organization" || params[:which].blank?) %>" href="/dashboard">
-    Posts
+    Gönderiler
     <span class="crayons-indicator"><%= @user.articles_count %></span>
   </a>
 
   <a class="crayons-link crayons-link--block <%= "crayons-link--current" if params[:action] == "series" && (params[:which] == "organization" || params[:which].blank?) %>" href="/<%= current_user.username %>/series">
-    Series
+    Seriler
     <span class="crayons-indicator"><%= @user.collections.count %></span>
   </a>
 
   <a class="crayons-link crayons-link--block <%= "crayons-link--current" if params[:action] == "followers" %>" href="/dashboard/user_followers">
-    Followers
+    Takipçiler
     <span class="crayons-indicator"><%= @user.followers_count %></span>
   </a>
 
   <a class="crayons-link crayons-link--block <%= "crayons-link--current" if params[:action] == "following_tags" %>" href="/dashboard/following_tags">
-    Following tags
+    Takip edilen etiketler
     <span class="crayons-indicator"><%= @user.following_tags_count %></span>
   </a>
 
   <a class="crayons-link crayons-link--block <%= "crayons-link--current" if params[:action] == "following_users" %>" href="/dashboard/following_users">
-    Following users
+    Takip edilen kullanıcılar
     <span class="crayons-indicator"><%= @user.following_users_count %></span>
   </a>
 
   <a class="crayons-link crayons-link--block <%= "crayons-link--current" if params[:action] == "following_organizations" %>" href="/dashboard/following_organizations">
-    Following organizations
+    Takip edilen organizasyonlar
     <span class="crayons-indicator"><%= @user.following_organizations_count %></span>
   </a>
 
   <a class="crayons-link crayons-link--block <%= "crayons-link--current" if params[:action] == "following_podcasts" %>" href="/dashboard/following_podcasts">
-    Following podcasts
+    Takip edilen podcastler
     <span class="crayons-indicator"><%= @user.following_podcasts_count %></span>
   </a>
 
   <a class="crayons-link crayons-link--block" href="/listings/dashboard" data-no-instant>
-    Listings
+    İlanlar
     <%= inline_svg_tag("external-link.svg", aria: true, class: "crayons-icon", title: "Moderation") %>
   </a>
 
   <% if @current_user_pro %>
     <a class="crayons-link crayons-link--block" href="<%= dashboard_pro_path %>">
-      Pro Analytics
+      Premium İstatistikler
     </a>
 
     <% if @organizations && (params[:which].blank? || params[:which] == "organization") %>
       <% @organizations.each do |org| %>
-        <a class="crayons-link crayons-link--block" href="<%= dashboard_pro_org_path(org.id) %>">Pro Analytics for <%= org.name %></a>
+        <a class="crayons-link crayons-link--block" href="<%= dashboard_pro_org_path(org.id) %>"><%= org.name %> için premium istatistikler</a>
       <% end %>
     <% end %>
   <% end %>
 
   <% if policy(:video).new? %>
-    <a class="crayons-btn crayons-btn--secondary w-100 mt-4" href="<%= new_video_path %>" data-no-instant> Upload a video
+    <a class="crayons-btn crayons-btn--secondary w-100 mt-4" href="<%= new_video_path %>" data-no-instant> Video yükle
     </a>
   <% end %>
 </nav>

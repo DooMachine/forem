@@ -134,9 +134,9 @@ export class ListingDashboard extends Component {
           }}
         >
           <option value="created_at" selected="selected">
-            Recently Created
+            Son Oluşturulan
           </option>
-          <option value="bumped_at">Recently Bumped</option>
+          <option value="bumped_at">Son Sponsoru</option>
         </select>
       </div>
     );
@@ -158,12 +158,12 @@ export class ListingDashboard extends Component {
     const listingLength = (selected, userListings, organizationListings) => {
       return selected === 'user' ? (
         <h4>
-          Listings Made:
+          Yapılan İlanlar:
           {userListings.length}
         </h4>
       ) : (
         <h4>
-          Listings Made:
+          Yapılan İlanlarar:
           {' '}
           {
             organizationListings.filter(
@@ -177,12 +177,12 @@ export class ListingDashboard extends Component {
     const creditCount = (selected, userCreds, organizations) => {
       return selected === 'user' ? (
         <h4>
-          Credits Available:
+          Mevcut Krediler:
           {userCreds}
         </h4>
       ) : (
         <h4>
-          Credits Available:
+          Mevcut Krediler:
           {' '}
           {
             organizations.find((org) => org.id === selected)
@@ -205,20 +205,20 @@ export class ListingDashboard extends Component {
             setStateOnKeyPress(event, { selectedListings: 'user' })
           }
         >
-          Personal
+          Kişisel
         </span>
         {orgButtons}
         <div className="dashboard-listings-header-wrapper">
           <div className="dashboard-listings-header">
-            <h3>Listings</h3>
+            <h3>İlanlar</h3>
             {listingLength(selectedListings, listings, orgListings)}
-            <a href="/listings/new">Create a Listing</a>
+            <a href="/listings/new">İlan oluştur</a>
           </div>
           <div className="dashboard-listings-header">
-            <h3>Credits</h3>
+            <h3>Kredi</h3>
             {creditCount(selectedListings, userCredits, orgs)}
             <a href="/credits/purchase" data-no-instant>
-              Buy Credits
+              Kredi satın Al
             </a>
           </div>
         </div>

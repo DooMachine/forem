@@ -14,7 +14,7 @@ const InviteForm = ({
           className="crayons-field__label invitation_form_title"
           htmlFor="chat_channel_membership_invitation_usernames"
         >
-          Usernames to invite
+          Davet edilecek kullanıcı adları
         </label>
         <input
           placeholder="Comma separated"
@@ -28,7 +28,7 @@ const InviteForm = ({
       </div>
       <div>
         <Button type="submit" onClick={handleChannelInvitations}>
-          Submit
+          Gönder
         </Button>
       </div>
     </div>

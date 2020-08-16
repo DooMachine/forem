@@ -11,7 +11,7 @@ const ChannelDescriptionSection = ({
       <h1 className="mb-1 channel_title">{channelName}</h1>
       <p>{channelDescription}</p>
       <p className="fw-bold">
-        You are a channel 
+        Kanaldaki rolünüz:
         {' '}
         {currentMembershipRole}
       </p>

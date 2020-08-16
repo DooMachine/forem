@@ -24,11 +24,11 @@ export const CommentsCount = ({ count, articlePath }) => {
         icon={commentsSVG}
         tagName="a"
       >
-        <span title="Number of comments">
+        <span title="Yorum sayısı">
           {count} 
           <span className="hidden s:inline">
             &nbsp;
-            {`${count > 1 ? 'comments' : 'comment'}`}
+            {`${count > 1 ? 'yorum' : 'yorum'}`}
           </span>
         </span>
       </Button>
@@ -46,7 +46,7 @@ export const CommentsCount = ({ count, articlePath }) => {
         data-testid="add-a-comment"
       >
         <span className="inline s:hidden">0</span>
-        <span className="hidden s:inline">Add comment</span>
+        <span className="hidden s:inline">Yorum ekle</span>
       </Button>
     );
   }

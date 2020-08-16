@@ -10,7 +10,7 @@ const Alert = ({ showAlert }) => {
       aria-hidden={!showAlert}
       className={`chatalert__default ${otherClassname}`}
     >
-      More new messages below
+      Aşağıda daha fazla yeni mesaj var
     </div>
   );
 };

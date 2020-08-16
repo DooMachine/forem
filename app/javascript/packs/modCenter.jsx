@@ -19,7 +19,7 @@ function loadElement() {
 
   if (isMobileDevice) {
     addSnackbarItem({
-      message: 'The Mod Center is best viewed on desktop.',
+      message: 'Mod Merkezi en iyi masaüstünde görüntülenir.',
       addCloseButton: true,
     });
   }

@@ -32,10 +32,10 @@ function writeCards(data, timeRangeLabel) {
   const followerCard = document.getElementById('followers-card');
   const readerCard = document.getElementById('readers-card');
 
-  readerCard.innerHTML = cardHTML(readers, `Readers ${timeRangeLabel}`);
-  commentCard.innerHTML = cardHTML(comments, `Comments ${timeRangeLabel}`);
-  reactionCard.innerHTML = cardHTML(reactions, `Reactions ${timeRangeLabel}`);
-  followerCard.innerHTML = cardHTML(follows, `Followers ${timeRangeLabel}`);
+  readerCard.innerHTML = cardHTML(readers, `Okuyucular ${timeRangeLabel}`);
+  commentCard.innerHTML = cardHTML(comments, `Yorumlar ${timeRangeLabel}`);
+  reactionCard.innerHTML = cardHTML(reactions, `Tepkiler ${timeRangeLabel}`);
+  followerCard.innerHTML = cardHTML(follows, `Takipçiler ${timeRangeLabel}`);
 }
 
 function drawChart({ canvas, title, labels, datasets }) {
@@ -122,11 +122,11 @@ function drawCharts(data, timeRangeLabel) {
 
   drawChart({
     canvas: document.getElementById('comments-chart'),
-    title: `Comments ${timeRangeLabel}`,
+    title: `Yorumlar ${timeRangeLabel}`,
     labels,
     datasets: [
       {
-        label: 'Comments',
+        label: 'Yorumlar',
         data: comments,
         fill: false,
         borderColor: 'rgb(75, 192, 192)',
@@ -137,7 +137,7 @@ function drawCharts(data, timeRangeLabel) {
 
   drawChart({
     canvas: document.getElementById('followers-chart'),
-    title: `New Followers ${timeRangeLabel}`,
+    title: `Yeni takipçiler ${timeRangeLabel}`,
     labels,
     datasets: [
       {
@@ -152,11 +152,11 @@ function drawCharts(data, timeRangeLabel) {
 
   drawChart({
     canvas: document.getElementById('readers-chart'),
-    title: `Reads ${timeRangeLabel}`,
+    title: `Okunabilir ${timeRangeLabel}`,
     labels,
     datasets: [
       {
-        label: 'Reads',
+        label: 'Okunabilir',
         data: readers,
         fill: false,
         borderColor: 'rgb(157, 57, 233)',
@@ -186,7 +186,7 @@ function renderReferrers(data) {
   if (emptyDomainReferrer) {
     tableBody.push(`
       <tr>
-        <td>All other external referrers</td>
+        <td>Diğer tüm harici yönlendirenler</td>
         <td>${emptyDomainReferrer.count}</td>
       </tr>
     `);

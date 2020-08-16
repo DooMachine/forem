@@ -126,5 +126,5 @@ function trackEnabled(div, track) {
 
 if (navigator.userAgent === 'DEV-Native-ios') {
   root.innerHTML =
-    '<h2 class="platform-unavailable-message">This feature is not yet available on iPhone</h2>';
+    '<h2 class="platform-unavailable-message">Bu özellik henüz iPhoneda mevcut değil</h2>';
 }

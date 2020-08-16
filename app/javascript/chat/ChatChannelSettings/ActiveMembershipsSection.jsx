@@ -19,7 +19,7 @@ const ActiveMembershipSection = ({
       className="p-4 grid gap-2 crayons-card mb-4"
       data-active-count={activeMemberships ? activeMemberships.length : 0}
     >
-      <h3 className="mb-2 active_members">Members</h3>
+      <h3 className="mb-2 active_members">Üyeler</h3>
       {activeMembershipList.map((activeMembership) => (
         <Membership
           membership={activeMembership}
@@ -36,7 +36,7 @@ const ActiveMembershipSection = ({
           onClick={toggleScreens}
           type="button"
         >
-          View All
+          Hepsini gör
         </Button>
       </div>
     </div>

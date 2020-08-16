@@ -10,38 +10,38 @@ export default {
 export const Default = () => (
   <div className="p-6 bg-smoke-10">
     <a href="/" className="crayons-nav-block crayons-nav-block--current">
-      <span className="crayons-icon" role="img" aria-label="home">
+      <span className="crayons-icon" role="img" aria-label="Anasayfa">
         🏡
       </span>
-      Home
+      Anasayfa
     </a>
     <a href="/" className="crayons-nav-block">
-      <span className="crayons-icon" role="img" aria-label="Podcasts">
+      <span className="crayons-icon" role="img" aria-label="Podcastler">
         📻
       </span>
-      Podcasts
+      Podcastler
     </a>
     <a href="/" className="crayons-nav-block">
-      <span className="crayons-icon" role="img" aria-label="Tags">
+      <span className="crayons-icon" role="img" aria-label="Etiketler">
         🏷
       </span>
-      Tags
+      Etiketler
     </a>
     <a href="/" className="crayons-nav-block">
-      <span className="crayons-icon" role="img" aria-label="Listings">
+      <span className="crayons-icon" role="img" aria-label="İlanlar">
         📑
       </span>
-      Listings
+      İlanlar
       <span className="crayons-indicator">3</span>
     </a>
     <a href="/" className="crayons-nav-block">
-      <span className="crayons-icon" role="img" aria-label="Code of Conduct">
+      <span className="crayons-icon" role="img" aria-label="Davranış kuralları">
         👍
       </span>
-      Code of Conduct
+      Davranış kuralları
     </a>
     <a href="/" className="crayons-nav-block crayons-nav-block--indented">
-      More...
+      Daha...
     </a>
   </div>
 );

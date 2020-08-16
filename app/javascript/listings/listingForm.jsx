@@ -65,7 +65,7 @@ export default class ListingForm extends Component {
     const selectOrg =
       organizations && organizations.length > 0 ? (
         <div className="field">
-          <label htmlFor="organizationId">Post under an organization:</label>
+          <label htmlFor="organizationId">Bir organizasyon altında yayınlayın:</label>
           <OrganizationPicker
             name="listing[organization_id]"
             id="listing_organization_id"
@@ -74,7 +74,7 @@ export default class ListingForm extends Component {
             onToggle={this.handleOrgIdChange}
           />
           <p>
-            <em>Posting on behalf of org spends org credits.</em>
+            <em>Kuruluş adına yayınlamak, kuruluş kredisi harcar.</em>
           </p>
         </div>
       ) : null;

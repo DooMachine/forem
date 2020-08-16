@@ -12,36 +12,36 @@
 
     <nav class="crayons-footer__nav">
       <div>
-        <a href="/" class="crayons-link crayons-link--block">Home</a>
+        <a href="/" class="crayons-link crayons-link--block">Anasayfa</a>
         <% if user_signed_in? %>
-          <a href="<%= readinglist_path %>" class="crayons-link crayons-link--block">Reading list</a>
+          <a href="<%= readinglist_path %>" class="crayons-link crayons-link--block">Okuma listesi</a>
         <% end %>
-        <a href="<%= listings_path %>" class="crayons-link crayons-link--block">Listings</a>
-        <a href="<%= pod_path %>" class="crayons-link crayons-link--block">Podcasts</a>
-        <a href="<%= videos_path %>" class="crayons-link crayons-link--block">Videos</a>
-        <a href="<%= tags_path %>" class="crayons-link crayons-link--block">Tags</a>
+        <a href="<%= listings_path %>" class="crayons-link crayons-link--block">İlanlar</a>
+        <a href="<%= pod_path %>" class="crayons-link crayons-link--block">Podcastler</a>
+        <a href="<%= videos_path %>" class="crayons-link crayons-link--block">Videolar</a>
+        <a href="<%= tags_path %>" class="crayons-link crayons-link--block">Etiketler</a>
         <% unless user_signed_in? %>
           <a href="/enter" class="crayons-link crayons-link--block fw-bold">
             Sign In/Up
           </a>
         <% else %>
-          <a href="/new" class="crayons-link crayons-link--block fw-bold">Write a post</a>
+          <a href="/new" class="crayons-link crayons-link--block fw-bold">Gönderi ekle</a>
         <% end %>
       </div>
 
       <div>
-        <a href="/code-of-conduct" class="crayons-link crayons-link--block">Code of Conduct</a>
-        <a href="/faq" class="crayons-link crayons-link--block">FAQ</a>
-        <a href="/about" class="crayons-link crayons-link--block">About</a>
-        <a href="/privacy" class="crayons-link crayons-link--block">Privacy policy</a>
-        <a href="/terms" class="crayons-link crayons-link--block">Terms of use</a>
-        <a href="/contact" class="crayons-link crayons-link--block">Contact</a>
+        <a href="/code-of-conduct" class="crayons-link crayons-link--block">Davranış Kuralları</a>
+        <a href="/faq" class="crayons-link crayons-link--block">SSS</a>
+        <a href="/about" class="crayons-link crayons-link--block">Hakkımızda</a>
+        <a href="/privacy" class="crayons-link crayons-link--block">Gizlilik Politikası</a>
+        <a href="/terms" class="crayons-link crayons-link--block">Kullanım Şartları</a>
+        <a href="/contact" class="crayons-link crayons-link--block">İletişim</a>
       </div>
 
       <div>
-        <a href="/sponsors" class="crayons-link crayons-link--block">Sponsors</a>
+        <a href="/sponsors" class="crayons-link crayons-link--block">Sponsorlar</a>
         <% if SiteConfig.shop_url.present? %>
-          <a href="<%= SiteConfig.shop_url %>" class="crayons-link crayons-link--block"><%= community_name %> Shop</a>
+          <a href="<%= SiteConfig.shop_url %>" class="crayons-link crayons-link--block"><%= community_name %> Dükkan</a>
         <% end %>
       </div>
     </nav>

@@ -27,7 +27,7 @@ function renderPage() {
     })
     .catch((error) => {
       // eslint-disable-next-line no-console
-      console.error('Unable to load onboarding', error);
+      console.error('İlk katılım yüklenemiyor', error);
     });
 }
 

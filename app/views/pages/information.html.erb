@@ -1,21 +1,21 @@
-<% title "About #{community_qualified_name}" %>
+<% title "#{community_qualified_name} hakkında" %>
 
 <%= content_for :page_meta do %>
   <link rel="canonical" href="<%= app_url("/p/information") %>" />
-  <meta name="description" content="All information about <%= community_qualified_name %>">
+  <meta name="description" content="<%= community_qualified_name %> hakkında daha fazla bilgi">
   <meta name="keywords" content="<%= SiteConfig.meta_keywords[:default] %>">
 
   <meta property="og:type" content="article" />
   <meta property="og:url" content="<%= app_url("/p/information") %>" />
-  <meta property="og:title" content="All information about <%= community_qualified_name %>" />
+  <meta property="og:title" content="<%= community_qualified_name %> hakkındaki bütün bilgiler" />
   <meta property="og:image" content="<%= SiteConfig.main_social_image %>" />
-  <meta property="og:description" content="<%= community_qualified_name %> is great!" />
+  <meta property="og:description" content="<%= community_qualified_name %> harikadır!" />
   <meta property="og:site_name" content="<%= community_qualified_name %>" />
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@<%= SiteConfig.social_media_handles["twitter"] %>">
   <meta name="twitter:title" content="All information about <%= community_qualified_name %>">
-  <meta name="twitter:description" content="<%= community_qualified_name %> is great!">
+  <meta name="twitter:description" content="<%= community_qualified_name %> harikadır!">
   <meta name="twitter:image:src" content="<%= SiteConfig.main_social_image %>">
 <% end %>
 
@@ -34,22 +34,22 @@
 
 <div class="crayons-layout crayons-layout--limited">
   <div class="crayons-card text-styles text-padding">
-    <h1 class="fs-3xl s:fs-4xl l:fs-5xl fw-bold s:fw-heavy lh-tight mb-4 mt-0">More information about <%= community_name %> 👋</h1>
+    <h1 class="fs-3xl s:fs-4xl l:fs-5xl fw-bold s:fw-heavy lh-tight mb-4 mt-0"><%= community_name %> hakkında daha fazla bilgi 👋</h1>
 
     <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/about">About</a></li>
+      <li><a href="/">Anasayfa</a></li>
+      <li><a href="/about">Hakkımızda</a></li>
       <% if SiteConfig.shop_url.present? %>
-        <li><a href="<%= SiteConfig.shop_url %>"><%= community_name %> Shop</a></li>
+        <li><a href="<%= SiteConfig.shop_url %>"><%= community_name %> Dükkan</a></li>
       <% end %>
-      <li><a href="/sponsors">Sponsors</a></li>
-      <li><a href="/faq">FAQ</a></li>
+      <li><a href="/sponsors">Sponsorlar</a></li>
+      <li><a href="/faq">SSS</a></li>
       <li><a href="/privacy">Privacy Policy</a></li>
       <li><a href="/terms">Terms of Use</a></li>
-      <li><a href="/contact">Contact</a></li>
-      <li><a href="/security">Vulnerabilities/Bug Bounty</a></li>
-      <li><a href="/code-of-conduct">Code of Conduct</a></li>
-      <li><a href="/downloads">Get the mobile app</a></li>
+      <li><a href="/contact">İletişim</a></li>
+      <li><a href="/security">Güvenlik Açıkları / Ödüller</a></li>
+      <li><a href="/code-of-conduct">Davranış Kuralları</a></li>
+      <li><a href="/downloads">İndirmeler</a></li>
     </ul>
 
     <%= render partial: "layouts/social_media" %>

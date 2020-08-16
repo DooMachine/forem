@@ -35,7 +35,7 @@ export const OrganizationPicker = ({
   emptyLabel,
 }) => (
   <select
-    aria-label="Select an organization"
+    aria-label="Bir kuruluş seçin"
     name={name}
     id={id}
     className={className}

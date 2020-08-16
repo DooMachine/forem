@@ -97,13 +97,13 @@ class FollowUsers extends Component {
     const { users, selectedUsers } = this.state;
     let followingStatus;
     if (selectedUsers.length === 0) {
-      followingStatus = "You're not following anyone";
+      followingStatus = "Kimseyi takip etmiyorsun";
     } else if (selectedUsers.length === 1) {
-      followingStatus = "You're following 1 person";
+      followingStatus = "1 kişi takip ediyorsun";
     } else if (selectedUsers.length === users.length) {
-      followingStatus = `You're following ${selectedUsers.length} people (everyone)`;
+      followingStatus = `${selectedUsers.length} kişiyi takip ediyorsun (herkes)`;
     } else {
-      followingStatus = `You're following ${selectedUsers.length} people`;
+      followingStatus = `${selectedUsers.length} kişiyi takip ediyorsun`;
     }
     const klassName =
       selectedUsers.length > 0
@@ -119,12 +119,12 @@ class FollowUsers extends Component {
 
     if (selectedUsers.length !== users.length) {
       if (users.length === 1) {
-        followText = `Select ${users.length} person`;
+        followText = `${users.length} kişi seç`;
       } else {
-        followText = `Select all ${users.length} people`;
+        followText = `${users.length} kişinin hepsini seç`;
       }
     } else {
-      followText = 'Deselect all';
+      followText = 'Tüm seçimleri kaldır';
     }
 
     return (
@@ -154,8 +154,8 @@ class FollowUsers extends Component {
           />
           <div className="onboarding-content toggle-bottom">
             <header className="onboarding-content-header">
-              <h1 className="title">Suggested people to follow</h1>
-              <h2 className="subtitle">Let&apos;s review a few things first</h2>
+              <h1 className="title">İzlenmesi önerilen kişiler</h1>
+              <h2 className="subtitle">Önce birkaç şeyi gözden geçirelim</h2>
             </header>
 
             <div
@@ -192,7 +192,7 @@ class FollowUsers extends Component {
                     type="button"
                     className="user-following-status"
                   >
-                    {selectedUsers.includes(user) ? 'Following' : 'Follow'}
+                    {selectedUsers.includes(user) ? 'Takip ediliyor' : 'Takip et'}
                   </button>
                 </button>
               ))}

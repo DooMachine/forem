@@ -17,7 +17,7 @@ export const PodcastFeed = ({ podcastItems }) => {
   return (
     <div className="single-article single-article-podcast-div">
       <h3>
-        <a href="/pod">Today&apos;s Podcasts</a>
+        <a href="/pod">Bugünün Podcastleri</a>
       </h3>
       {podcastItemDivs}
     </div>

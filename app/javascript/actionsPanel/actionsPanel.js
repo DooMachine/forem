@@ -76,21 +76,21 @@ export function addReactionButtonListeners() {
         let message;
         /* eslint-disable no-restricted-globals */
         if (outcome.result === 'create' && outcome.category === 'thumbsup') {
-          message = 'This post will be more visible.';
+          message = 'Bu gönderi daha fazla görünür olacak.';
         } else if (
           outcome.result === 'create' &&
           outcome.category === 'thumbsdown'
         ) {
-          message = 'This post will be less visible.';
+          message = 'Bu gönderi daha az görünür olacak.';
         } else if (
           outcome.result === 'create' &&
           outcome.category === 'vomit'
         ) {
-          message = "You've flagged this post as abusive or spam.";
+          message = "Bu gönderiyi spam veya suistimalci olarak işaretlediniz.";
         } else if (outcome.result === 'destroy') {
           message = 'Your quality rating was removed.';
         } else if (outcome.error) {
-          message = `Error: ${outcome.error}`;
+          message = `Hata: ${outcome.error}`;
         }
         top.addSnackbarItem({
           message,
@@ -251,7 +251,7 @@ export function handleAdjustTagBtn(btn) {
     adminTagInput &&
     adminTagInput.value !== '' &&
     confirm(
-      'This will clear your current "Add a tag" input. Do you want to continue?',
+      '"tag ekle" girişinizi temizlenecek. Devam etmek istiyor musunuz?',
     )
   ) {
     /* eslint-enable no-restricted-globals */

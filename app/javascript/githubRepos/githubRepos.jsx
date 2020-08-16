@@ -33,7 +33,7 @@ export class GithubRepos extends Component {
     if (error) {
       return (
         <div className="github-repos github-repos-errored" role="alert">
-          An error occurred: {errorMessage}
+          Bir hata oluştu: {errorMessage}
         </div>
       );
     }

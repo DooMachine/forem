@@ -6,7 +6,7 @@ const domId = 1;
 const Title = ({ onChange, defaultValue }) => (
   <div className="field">
     <label className="listingform__label" htmlFor={domId}>
-      Title
+      Başlık
     </label>
     <input
       type="text"

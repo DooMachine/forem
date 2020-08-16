@@ -41,7 +41,7 @@ describe('<ImageUploader />', () => {
 
     fireEvent.change(inputEl, { target: { files: [file] } });
 
-    const uploadingImage = queryByText(/uploading.../i);
+    const uploadingImage = queryByText(/Yükleniyor.../i);
 
     expect(uploadingImage).toBeDefined();
   });
@@ -66,14 +66,14 @@ describe('<ImageUploader />', () => {
     });
 
     fireEvent.change(inputEl, { target: { files: [file] } });
-    let uploadingImage = queryByText(/uploading.../i);
+    let uploadingImage = queryByText(/Yükleniyor.../i);
 
     expect(uploadingImage).toBeDefined();
 
     expect(inputEl.files[0]).toEqual(file);
     expect(inputEl.files).toHaveLength(1);
 
-    waitForElementToBeRemoved(() => queryByText(/uploading.../i));
+    waitForElementToBeRemoved(() => queryByText(/Yükleniyor.../i));
 
     expect(await findByTitle(/copy markdown for image/i)).toBeDefined();
 
@@ -106,9 +106,9 @@ describe('<ImageUploader />', () => {
       },
     });
 
-    expect(await findByText(/uploading.../i)).toBeDefined();
+    expect(await findByText(/Yükleniyor.../i)).toBeDefined();
 
-    waitForElementToBeRemoved(() => queryByText(/uploading.../i));
+    waitForElementToBeRemoved(() => queryByText(/Yükleniyor.../i));
 
     await findByText(/some fake error/i);
   });

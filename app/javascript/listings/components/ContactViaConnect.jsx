@@ -8,7 +8,7 @@ const ContactViaConnect = ({ onChange, checked }) => (
       className="listingform__label"
       htmlFor="contact_via_connect"
     >
-      Allow Users to Message Me Via In-App Chat (DEV Connect)
+      Kullanıcıların Uygulama İçi Sohbet Yoluyla Bana Mesaj Göndermesine İzin Ver
     </label>
     <input
       type="checkbox"

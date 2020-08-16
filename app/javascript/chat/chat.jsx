@@ -1106,15 +1106,15 @@ export default class Chat extends Component {
         return (
           <div className="chatmessage" style={{ color: 'grey' }}>
             <div className="chatmessage__body">
-              You and{' '}
+              Sen ve{' '}
               <a href={`/${activeChannel.channel_modified_slug}`}>
                 {activeChannel.channel_modified_slug}
               </a>{' '}
-              are connected because you both follow each other. All interactions{' '}
+              bağlısınız çünkü ikiniz de birbirinizi takip ediyorsunuz. Tüm etkileşimler{' '}
               <em>
-                <b>must</b>
+                <b>mutlaka</b>
               </em>{' '}
-              abide by the <a href="/code-of-conduct">code of conduct</a>.
+              <a href="/code-of-conduct">davranış kuralları</a>'na uygun olmalıdır.
             </div>
           </div>
         );
@@ -1123,11 +1123,11 @@ export default class Chat extends Component {
         return (
           <div className="chatmessage" style={{ color: 'grey' }}>
             <div className="chatmessage__body">
-              You have joined {activeChannel.channel_name}! All interactions{' '}
+              {activeChannel.channel_name} kanalına katıldınız! Tüm etkileşimler{' '}
               <em>
-                <b>must</b>
+                <b>mutlaka</b>
               </em>{' '}
-              abide by the <a href="/code-of-conduct">code of conduct</a>.
+              <a href="/code-of-conduct">davranış kuralları</a>'na uygun olmalıdır.
             </div>
           </div>
         );
@@ -1229,13 +1229,13 @@ export default class Chat extends Component {
       if (notificationsPermission === 'granted') {
         notificationsState = (
           <div className="chat_chatconfig chat_chatconfig--on">
-            Notifications On
+            Bildirimler açık
           </div>
         );
       } else if (notificationsPermission === 'denied') {
         notificationsState = (
           <div className="chat_chatconfig chat_chatconfig--off">
-            Notifications Off
+             Bildirimler kapalı
           </div>
         );
       }
@@ -1274,22 +1274,22 @@ export default class Chat extends Component {
             </button>
             {this.renderChannelFilterButton(
               'all',
-              'all',
+              'hepsi',
               state.channelTypeFilter,
             )}
             {this.renderChannelFilterButton(
               'direct',
-              'direct',
+              'direkt',
               state.channelTypeFilter,
             )}
             {this.renderChannelFilterButton(
               'invite_only',
-              'group',
+              'grup',
               state.channelTypeFilter,
             )}
             <button
               className="chat__channelssearchtoggle "
-              aria-label="Toggle request manager"
+              aria-label="İstek yöneticisini değiştir"
               onClick={this.triggerActiveContent}
               data-content="sidecar-joining-request-manager"
             >
@@ -1669,7 +1669,7 @@ export default class Chat extends Component {
       >
         <div className="crayons-modal__box">
           <div className="crayons-modal__box__body">
-            <h3>Are you sure, you want to delete this message?</h3>
+            <h3>Bu mesajı silmek istediğinizden emin misiniz?</h3>
             <div className="delete-actions__container">
               <div
                 role="button"
@@ -1681,7 +1681,7 @@ export default class Chat extends Component {
                 }}
               >
                 {' '}
-                Delete
+                Sil
               </div>
               <div
                 role="button"
@@ -1693,7 +1693,7 @@ export default class Chat extends Component {
                 }}
               >
                 {' '}
-                Cancel
+                İptal
               </div>
             </div>
           </div>

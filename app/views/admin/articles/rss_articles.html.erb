@@ -1,10 +1,10 @@
-<h1>RSS ARTICLES - <a href="/admin/articles">Main Articles Dashboard</a></h1>
+<h1>RSS MAKALELER - <a href="/admin/articles">Ana Makale Paneli</a></h1>
 <form class="lmao">
-  <label><input id="cb_published" type="checkbox" name="checkbox" checked> Published </label>
-  <label><input id="cb_featured" type="checkbox" name="checkbox" checked> Featured </label>
-  <label><input id="cb_admin_allowed" type="checkbox" name="checkbox" checked> Admin publish Allowed </label>
-  <label><input id="cb_only_user" type="checkbox" name="checkbox"> Only User may publish </label>
-  <label><input id="cb_retrieved_today" type="checkbox" name="checkbox" checked> Retrieved Today</label>
+  <label><input id="cb_published" type="checkbox" name="checkbox" checked> Yayınlandı </label>
+  <label><input id="cb_featured" type="checkbox" name="checkbox" checked> Öne çıkarılan </label>
+  <label><input id="cb_admin_allowed" type="checkbox" name="checkbox" checked> Yönetici yayınlamaya izin verildi </label>
+  <label><input id="cb_only_user" type="checkbox" name="checkbox"> Sadece Kullanıcı yayınlayabilir </label>
+  <label><input id="cb_retrieved_today" type="checkbox" name="checkbox" checked> Bugün Alındı</label>
   <input id="submit" type="submit" value="Apply Filter and refresh">
 </form>
 
@@ -16,14 +16,14 @@
 
   <div class="row main-group <%= other_classes %>" data-retrieveddate="<%= article.created_at %>" style="<%= "background:#f2fff2;" if article.user.feed_admin_publish_permission %> <%= "background:#daf7ff;" if article.published %>">
     <b><a href="<%= article.path %>" target="_blank" rel="noopener"><%= article.title %></a></b>
-    <a href="<%= article.path %>/edit" target="_blank" rel="noopener" style="background:#00da8b;color:white;padding:1px 6px">EDIT</a><br />
-    by <b><a href="<%= article.user.path %>" target="_blank" rel="noopener"><%= article.username %></a></b>
+    <a href="<%= article.path %>/edit" target="_blank" rel="noopener" style="background:#00da8b;color:white;padding:1px 6px">DÜZENLEYEN:</a><br />
+    <b><a href="<%= article.user.path %>" target="_blank" rel="noopener"><%= article.username %></a></b>
     <br />
     <br />
     <% article_length = article.body_markdown.length %>
     <% if article_length < 550 %>
       <div style="background:#957546;display:table-row;color:antiquewhite">
-        <b> --Possibly Poor Content (only <%= article.body_markdown.length %> characters)-- </b>
+        <b> --Muhtemelen Kötü İçerik (yalnızca <% = article.body_markdown.length%> karakter)-- </b>
       </div>
       <br />
     <% end %>
@@ -31,23 +31,23 @@
       <form action="/admin/articles/<%= article.id %>" accept-charset="UTF-8" method="post">
         <input name="utf8" type="hidden" value="✓">
         <input type="hidden" name="_method" value="patch" />
-        Featured Number:
+        Öne Çıkan Numara:
         <input name="article[featured_number]" value="<%= article.featured_number %>" id="featured_number_<%= article.id %>" style="max-width:140px">
         <button onclick="timeNow(<%= article.id %>);return false;">☝️</button>
-        &nbsp Featured: <input name="article[featured]" type="checkbox" <%= "checked" if article.featured %>>
-        &nbsp Image BG color:
+        &nbsp Öne çıkan: <input name="article[featured]" type="checkbox" <%= "checked" if article.featured %>>
+        &nbsp Görüntü arkaplan rengi:
         <input name="article[main_image_background_hex_color]" value="<%= article.main_image_background_hex_color %>" id="featured_number_<%= article.id %>"><br /><br />
-        Social Image:
+        Sosyal resim:
         <input name="article[social_image]" value="<%= article.social_image %>" id="featured_number_<%= article.id %>">
         &nbsp &nbsp
-        <button class="btn btn-primary">SUBMIT</button>
+        <button class="btn btn-primary">GÖNDER</button>
       </form>
       <% if article.published %>
-        <div class="row" style="background:#00b0e3;color:white;">PUBLISHED <%= "<strong>AND FEATURED</strong>".html_safe if article.featured %></div>
+        <div class="row" style="background:#00b0e3;color:white;">YAYINLANDI <%= "<strong>AND FEATURED</strong>".html_safe if article.featured %></div>
       <% elsif article.user.feed_admin_publish_permission %>
-        <div class="row" style="background:#5cb85c;color:white;">ADMIN PUBLISH ALLOWED</div>
+        <div class="row" style="background:#5cb85c;color:white;">YÖNETİCİ YAYININA İZİN VERİLDİ</div>
       <% else %>
-        <div class="row" style="background:#e3174a;color:white;">ONLY USER MAY PUBLISH</div>
+        <div class="row" style="background:#e3174a;color:white;">SADECE KULLANICI YAYINLAYABİLİR</div>
       <% end %>
     </div>
   </div>

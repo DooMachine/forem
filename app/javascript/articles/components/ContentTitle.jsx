@@ -23,7 +23,7 @@ export const ContentTitle = ({ article }) => (
           className="crayons-story__flare-tag"
           style={{ background: '#5874d9', color: 'white' }}
         >
-          person
+          kişi
         </span>
       )}
       {/* eslint-disable-next-line react/no-danger */}

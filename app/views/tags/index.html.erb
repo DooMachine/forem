@@ -21,7 +21,7 @@
 
 <div class="crayons-layout crayons-layout--1-col">
   <header class="px-2 m:px-0">
-    <h1>Top tags</h1>
+    <h1>Popüler Etiketler</h1>
   </header>
 
   <div class="grid gap-2 m:gap-4 l:gap-6 m:grid-cols-2 l:grid-cols-3 px-2 m:px-0">
@@ -37,9 +37,9 @@
           <p class="mb-2 color-base-70 truncate-at-3"><%= sanitize tag.short_summary %></p>
         <% end %>
         <p class="mb-3 fs-s color-base-60">
-          <%= pluralize tag.taggings_count, "post" %> published
+          <%= pluralize tag.taggings_count, "post" %> yayınlayan
           <% if tag.sponsorship && tag.sponsorship.status == "live" && tag.sponsorship.expires_at > Time.current %>
-          | Sponsored by <%= tag.sponsorship.organization.name %> ❤️
+          | Sponsor: <%= tag.sponsorship.organization.name %> ❤️
           <% end %>
         </p>
 
@@ -48,7 +48,7 @@
             <button
               class="crayons-btn crayons-btn--secondary follow-action-button"
               data-info='{"id":<%= tag.id %>,"className":"Tag", "followStyle":"secondary"}'>
-              Follow
+              Takip et
             </button>
           </div>
         <% end %>

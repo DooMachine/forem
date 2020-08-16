@@ -17,10 +17,10 @@ export class CategoryLinks extends Component {
         <select
           id="mobile_nav_listings"
           class="crayons-select"
-          aria-label="Listings"
+          aria-label="İlanlar"
         >
           <option value="/listings" selected={selectedCategory === ''}>
-            All listings
+            Tüm İlanlar
           </option>
 
           {categories.map((category) => {

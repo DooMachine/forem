@@ -50,7 +50,7 @@ export default class Chat extends Component {
             className="composer-submit composer-submit__edit crayons-btn"
             onClick={handleSubmitOnClickEdit}
           >
-            Save
+            Kaydet
           </button>
           <div
             role="button"
@@ -61,7 +61,7 @@ export default class Chat extends Component {
               if (e.keyCode === 13) handleEditMessageClose();
             }}
           >
-            Close
+            Kapat
           </div>
         </div>
       </div>
@@ -80,19 +80,19 @@ export default class Chat extends Component {
         <textarea
           className="crayons-textfield composer-textarea"
           id="messageform"
-          placeholder="Write message..."
+          placeholder="Mesaj yaz..."
           onKeyDown={handleKeyDown}
           onKeyPress={handleMention}
           onKeyUp={handleKeyUp}
           maxLength="1000"
-          aria-label="Compose a message"
+          aria-label="Mesaj yaz"
         />
         <button
           type="button"
           className="crayons-btn composer-submit"
           onClick={handleSubmitOnClick}
         >
-          Send
+          Gönder
         </button>
       </div>
     );

@@ -1,17 +1,13 @@
 class FlareTag
-  FLARE_TAG_NAMES = %w[explainlikeimfive
-                       jokes
-                       watercooler
+  FLARE_TAG_NAMES = %w[gündem
+                       beşyaşındakineanlatırgibi
+                       memes
                        ama
-                       techtalks
-                       todayilearned
-                       help
-                       news
-                       healthydebate
-                       showdev
-                       challenge
-                       anonymous
-                       discuss].freeze
+                       yardım
+                       müzakere
+                       yarışma
+                       anonim
+                       tartışma].freeze
 
   FLARE_TAG_IDS_HASH = Tag.where(name: FLARE_TAG_NAMES).pluck(:name, :id).to_h.freeze
 

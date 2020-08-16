@@ -22,7 +22,7 @@ const RequestedMembershipSection = ({
         requestedMemberships ? requestedMemberships.length : 0
       }
     >
-      <h3 className="mb-2 requested_memberships">Joining Request</h3>
+      <h3 className="mb-2 requested_memberships">Katılma İsteği</h3>
       {requestedMemberships && requestedMemberships.length > 0
         ? requestedMemberships.map((pendingMembership) => (
             <Membership

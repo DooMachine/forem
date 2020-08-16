@@ -11,7 +11,7 @@ export const Tabs = ({ onPreview, previewShowing }) => {
         onClick={previewShowing && onPreview}
         type="button"
       >
-        Edit
+        Düzenle
       </button>
       <button
         className={`crayons-tabs__item ${
@@ -20,7 +20,7 @@ export const Tabs = ({ onPreview, previewShowing }) => {
         onClick={!previewShowing && onPreview}
         type="button"
       >
-        Preview
+        Ön izleme
       </button>
     </div>
   );

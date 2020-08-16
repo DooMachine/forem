@@ -80,11 +80,11 @@ class DropdownMenu extends Component {
         >
           {isOwner ? (
             <a href={editUrl} className="crayons-link crayons-link--block">
-              Edit
+              Düzenle
             </a>
           ) : (
             <a href={reportUrl} className="crayons-link crayons-link--block">
-              Report Abuse
+              Kötüye Kullanımı Bildir
             </a>
           )}
         </div>

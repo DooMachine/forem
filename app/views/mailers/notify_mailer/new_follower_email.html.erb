@@ -5,10 +5,10 @@
 <% end %>
 
 <h2 style="font-size:32px;">
-  <a href="<%= user_url(@follower) %>"><%= @follower.name %></a> just followed you 🤗</h2>
-<h3 style="font-weight:600">You now have <%= pluralize(@user.followers_count, "total follower") %>. See all of your recent followers
-  <a href="<%= app_url("/dashboard/user_followers") %>">right here</a>.</h3>
+  <a href="<%= user_url(@follower) %>"><%= @follower.name %></a>seni takip etti 🤗</h2>
+<h3 style="font-weight:600">Toplam <%= pluralize(@user.followers_count, "total follower") %> takipçiniz var. 
+  <a href="<%= app_url("/dashboard/user_followers") %>">right here</a> tümünü görün.</h3>
 <p>
-  When someone follows you on
-  <a href="<%= app_url %>"><%= community_name %></a>, your posts will be prioritized in their feed and notifications. The perks of popularity I suppose.
+  Birisi sizi 
+  <a href="<%= app_url %>"><%= community_name %></a>'de takip ettiğinde, gönderileriniz anasayfalarında ve bildirimlerinde öncelikli görülecektir. Sanırım popülerliğin avantajları.
 </p>

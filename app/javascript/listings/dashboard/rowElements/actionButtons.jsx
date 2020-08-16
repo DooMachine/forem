@@ -10,21 +10,21 @@ const ActionButtons = ({ isDraft, editUrl, deleteConfirmUrl }) => {
           href={editUrl}
           className="dashboard-listing-edit-button cta pill yellow"
         >
-          DRAFT
+          TASLAK
         </a>
       )}
       <a
         href={editUrl}
         className="dashboard-listing-edit-button cta pill green"
       >
-        EDIT
+        DÜZENLE
       </a>
       <a
         href={deleteConfirmUrl}
         className="dashboard-listing-delete-button cta pill black"
         data-no-instant
       >
-        DELETE
+        SİL
       </a>
     </div>
   );

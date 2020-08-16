@@ -66,15 +66,15 @@ class EmailPreferencesForm extends Component {
           />
           <div className="onboarding-content terms-and-conditions-wrapper">
             <header className="onboarding-content-header">
-              <h1 className="title">Almost there!</h1>
+              <h1 className="title">Neredeyse!</h1>
               <h2 className="subtitle">
-                Review your email preferences before we continue.
+                Devam etmeden önce e-posta tercihlerinizi gözden geçirin.
               </h2>
             </header>
 
             <form>
               <fieldset>
-                <legend>Email preferences</legend>
+                <legend>E-posta Tercihleri</legend>
                 <ul>
                   <li className="checkbox-item">
                     <label htmlFor="email_newsletter">
@@ -85,7 +85,7 @@ class EmailPreferencesForm extends Component {
                         checked={email_newsletter}
                         onChange={this.handleChange}
                       />
-                      I want to receive weekly newsletter emails.
+                      Haftalık haber bülteni e-postaları almak istiyorum.
                     </label>
                   </li>
                   <li className="checkbox-item">
@@ -97,8 +97,8 @@ class EmailPreferencesForm extends Component {
                         checked={email_digest_periodic}
                         onChange={this.handleChange}
                       />
-                      I want to receive a periodic digest of top posts from my
-                      tags.
+                      Etiketlerimden en iyi gönderilerin periyodik bir özetini almak
+                      istiyorum.
                     </label>
                   </li>
                 </ul>

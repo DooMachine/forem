@@ -35,7 +35,7 @@ class SidebarUser extends Component {
             onClick={this.onClick}
             id={`widget-list-item__follow-button-${user.username}`}
           >
-            {user.following ? 'Following' : 'Follow'}
+            {user.following ? 'Takip ediliyor' : 'Takip et'}
           </button>
         </div>
       </div>

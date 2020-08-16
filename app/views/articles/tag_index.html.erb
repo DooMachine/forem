@@ -45,30 +45,30 @@
         </button>
         <% if user_signed_in? %>
           <div class="flex-1 flex items-center justify-between">
-            <h2 class="fs-l fw-heavy">Posts</h2>
+            <h2 class="fs-l fw-heavy">Gönderiler</h2>
             <nav class="crayons-tabs hidden s:flex">
               <a href="<%= list_path %>/" class="crayons-tabs__item <%= "crayons-tabs__item--current" if %w[week month year infinity latest].exclude?(params[:timeframe]) %>">Feed</a>
 
-              <a href="<%= list_path %>/top/week" class="crayons-tabs__item <%= "crayons-tabs__item--current" if timeframe_check("week") %>">Week</a>
-              <a href="<%= list_path %>/top/month" class="crayons-tabs__item <%= "crayons-tabs__item--current" if timeframe_check("month") %>">Month</a>
-              <a href="<%= list_path %>/top/year" class="crayons-tabs__item <%= "crayons-tabs__item--current" if timeframe_check("year") %>">Year</a>
-              <a href="<%= list_path %>/top/infinity" class="crayons-tabs__item <%= "crayons-tabs__item--current" if timeframe_check("infinity") %>">Infinity</a>
+              <a href="<%= list_path %>/top/week" class="crayons-tabs__item <%= "crayons-tabs__item--current" if timeframe_check("week") %>">Hafta</a>
+              <a href="<%= list_path %>/top/month" class="crayons-tabs__item <%= "crayons-tabs__item--current" if timeframe_check("month") %>">Ay</a>
+              <a href="<%= list_path %>/top/year" class="crayons-tabs__item <%= "crayons-tabs__item--current" if timeframe_check("year") %>">Yıl</a>
+              <a href="<%= list_path %>/top/infinity" class="crayons-tabs__item <%= "crayons-tabs__item--current" if timeframe_check("infinity") %>">Bütün</a>
 
-              <a href="<%= list_path %>/latest" class="crayons-tabs__item <%= "crayons-tabs__item--current" if timeframe_check("latest") %>">Latest</a>
+              <a href="<%= list_path %>/latest" class="crayons-tabs__item <%= "crayons-tabs__item--current" if timeframe_check("latest") %>">En son</a>
             </nav>
 
             <select class="crayons-select s:hidden ml-2 s:ml-auto w-auto" id="feed-filter-select" aria-label="feed-filter-select">
               <option value="<%= list_path %>" <% if ["week", "month", "year", "infinity", "latest"].exclude?(params[:timeframe]) %> selected<% end %>>Feed</option>
-              <option value="<%= list_path %>/top/week" <% if timeframe_check("week") %> selected<% end %>>Week</option>
-              <option value="<%= list_path %>/top/month" <% if timeframe_check("month") %> selected<% end %>>Month</option>
-              <option value="<%= list_path %>/top/year" <% if timeframe_check("year") %> selected<% end %>>Year</option>
-              <option value="<%= list_path %>/top/infinity" <% if timeframe_check("infinity") %> selected<% end %>>Infinity</option>
-              <option value="<%= list_path %>/latest" <% if timeframe_check("latest") %> selected<% end %>>Latest</option>
+              <option value="<%= list_path %>/top/week" <% if timeframe_check("week") %> selected<% end %>>Hafta</option>
+              <option value="<%= list_path %>/top/month" <% if timeframe_check("month") %> selected<% end %>>Ay</option>
+              <option value="<%= list_path %>/top/year" <% if timeframe_check("year") %> selected<% end %>>Yıl</option>
+              <option value="<%= list_path %>/top/infinity" <% if timeframe_check("infinity") %> selected<% end %>>Bütün</option>
+              <option value="<%= list_path %>/latest" <% if timeframe_check("latest") %> selected<% end %>>En son</option>
             </select>
           </div>
         <% else %>
           <div class="flex-1 flex items-center justify-between">
-            <div class="crayons-notice w-100">👋 <a href="/enter">Sign in</a> for the ability sort posts by <strong>top</strong> and  <strong>latest</strong>.</div>
+            <div class="crayons-notice w-100">👋 <a href="/enter">Gönderileri <strong> en üste </strong> ve <strong> en yeniye </strong> göre sıralayabilmek için oturum açın </a>.</div>
           </div>
         <% end %>
 
@@ -87,7 +87,7 @@
         <% end %>
       </div>
       <div class="loading-articles" id="loading-articles">
-        loading...
+        yükleniyor...
       </div>
     </div>
     <%= render "articles/tags/sidebar_additional" %>

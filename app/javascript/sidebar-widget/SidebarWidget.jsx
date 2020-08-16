@@ -55,7 +55,7 @@ class SidebarWidget extends Component {
     const followBtn = document.getElementById(
       `widget-list-item__follow-button-${updatedUser.username}`,
     );
-    followBtn.innerText = updatedUser.following ? 'Follow' : 'Following';
+    followBtn.innerText = updatedUser.following ? 'Takip et' : 'Takip ediliyor';
 
     const toggleFollowState = (newFollowState) => {
       updatedUser.following = newFollowState === 'followed';
@@ -81,7 +81,7 @@ class SidebarWidget extends Component {
         <div className="widget" id="widget-00001">
           <div className="widget-suggested-follows-container">
             <header>
-              <h4>who to follow</h4>
+              <h4>Kimleri takip etmeli</h4>
             </header>
             <div className="widget-body">{users}</div>
           </div>

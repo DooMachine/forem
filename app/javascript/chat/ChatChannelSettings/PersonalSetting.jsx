@@ -9,8 +9,8 @@ const PersonalSettings = ({
 }) => {
   return (
     <div className="crayons-card p-4 grid gap-2 mb-4 personl-settings">
-      <h3>Personal Settings</h3>
-      <h4>Notifications</h4>
+      <h3>Kişisel ayarlar</h3>
+      <h4>Bildirimler</h4>
       <div className="crayons-field crayons-field--checkbox">
         <input
           type="checkbox"
@@ -20,7 +20,7 @@ const PersonalSettings = ({
           onChange={handlePersonChannelSetting}
         />
         <label htmlFor="c3" className="crayons-field__label">
-          Receive Notifications for New Messages
+          Yeni Mesajlar için Bildirimler Alın
         </label>
       </div>
       <div>
@@ -28,7 +28,7 @@ const PersonalSettings = ({
           type="submit"
           onClick={updateCurrentMembershipNotificationSettings}
         >
-          Submit
+          Gönder
         </Button>
       </div>
     </div>

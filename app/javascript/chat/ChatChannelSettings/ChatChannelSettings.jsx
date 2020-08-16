@@ -302,7 +302,7 @@ export default class ChatChannelSettings extends Component {
   handleleaveChannelMembership = async () => {
     // eslint-disable-next-line no-restricted-globals
     const actionStatus = confirm(
-      'Are you absolutely sure you want to leave this channel? This action is permanent.',
+      'Bu kanaldan ayrılmak istediğinizden kesinlikle emin misiniz? Bu eylem kalıcıdır.',
     );
     const { currentMembership } = this.state;
     if (actionStatus) {

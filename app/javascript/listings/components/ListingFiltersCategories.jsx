@@ -16,7 +16,7 @@ const ListingFiltersCategories = ({ categories, category, onClick }) => (
         onClick={onClick}
         data-no-instant
       >
-        All listings
+        Tüm listeler
       </a>
       <CategoryLinks
         categories={categories}

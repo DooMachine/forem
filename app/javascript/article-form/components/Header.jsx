@@ -17,7 +17,7 @@ export const Header = ({
       <a
         href="/"
         className="crayons-article-form__logo"
-        aria-label="Home"
+        aria-label="Anasayfa"
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: logoSvg }}
       />
@@ -41,4 +41,4 @@ Header.propTypes = {
   logoSvg: PropTypes.string.isRequired,
 };
 
-Header.displayName = 'Header';
+Header.displayName = 'Yardım';

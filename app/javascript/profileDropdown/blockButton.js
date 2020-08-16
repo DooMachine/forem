@@ -32,23 +32,23 @@ export default function initBlock() {
           blockButton.addEventListener('click', block, { once: true });
         } else if (response.status === 422) {
           window.alert(
-            `Something went wrong: ${response.error} -- Please refresh the page to try again.`,
+            `Bir şeyler ters gitti: ${response.error} -- Tekrar denemek için lütfen sayfayı yenileyin.`,
           );
         }
       })
       .catch((e) => {
         window.alert(
-          `Something went wrong: ${e}. -- Please refresh the page to try again.`,
+          `Bir şeyler ters gitti: ${e}. -- Tekrar denemek için lütfen sayfayı yenileyin.`,
         );
       });
   }
 
   function block() {
     const confirmBlock = window.confirm(
-      `Are you sure you want to block this person? This will:
-      - prevent them from commenting on your posts
-      - block all notifications from them
-      - prevent them from messaging you via DEV Connect`,
+      `Bu kişiyi engellemek istediğinize emin misiniz? Bu şekilde:
+      - gönderilerinize yorum yapmaların engellencek
+      - gelen tüm bildirimleri engellenecek
+      - sana mesaj göndermesini engellenecek`,
     );
     if (confirmBlock) {
       fetch(`/user_blocks`, {
@@ -71,13 +71,13 @@ export default function initBlock() {
             blockButton.addEventListener('click', unblock, { once: true });
           } else if (response.status === 422) {
             window.alert(
-              `Something went wrong: ${response.error}. -- Please refresh the page to try again.`,
+              `Bir şeyler ters gitti: ${response.error}. -- Tekrar denemek için lütfen sayfayı yenileyin.`,
             );
           }
         })
         .catch((e) => {
           window.alert(
-            `Something went wrong: ${e}. -- Please refresh the page to try again.`,
+            `Bir şeyler ters gitti: ${e}. -- Tekrar denemek için lütfen sayfayı yenileyin.`,
           );
         });
     } else {

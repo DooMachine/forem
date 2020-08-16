@@ -230,7 +230,7 @@ export default class ArticleForm extends Component {
     e.preventDefault();
     // eslint-disable-next-line no-alert
     const revert = window.confirm(
-      'Are you sure you want to revert to the previous save?',
+      'Önceki kayda dönmek istediğinizden emin misiniz?',
     );
     if (!revert && navigator.userAgent !== 'DEV-Native-ios') return;
 

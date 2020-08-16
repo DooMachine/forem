@@ -26,7 +26,7 @@ class Categories extends Component {
 
     return (
       <details>
-        <summary>Category details/rules</summary>
+        <summary>Kategori ayrıntıları / kurallar</summary>
         {rules}
       </details>
     );

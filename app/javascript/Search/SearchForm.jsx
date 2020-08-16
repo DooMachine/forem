@@ -20,9 +20,9 @@ export const SearchForm = ({
       type="text"
       name="q"
       id={searchBoxId}
-      placeholder="Search..."
+      placeholder="Ara..."
       autoComplete="off"
-      aria-label="search"
+      aria-label="ara"
       onKeyDown={onSearch}
       value={searchTerm}
     />

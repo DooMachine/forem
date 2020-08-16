@@ -21,18 +21,18 @@ async function confirmFlagUser({ reactableType, category, reactableId }) {
 
     if (outcome.result === 'create') {
       top.addSnackbarItem({
-        message: 'All posts by this author will be less visible.',
+        message: 'Bu yazarın tüm gönderileri daha az görünür olacak.',
         addCloseButton: true,
       });
     } else if (outcome.result === null) {
       top.addSnackbarItem({
         message:
-          "It seems you've already reduced the visibility of this author's posts.",
+          "Görünüşe göre bu yazarın gönderilerinin görünürlüğünü çoktan azaltmışsınız.",
         addCloseButton: true,
       });
     } else {
       top.addSnackbarItem({
-        message: `Response from server: ${JSON.stringify(outcome)}`,
+        message: `Server cevabi: ${JSON.stringify(outcome)}`,
         addCloseButton: true,
       });
     }
@@ -126,8 +126,8 @@ export function FlagUserModal({ modCenterArticleUrl, authorId }) {
         <div class="crayons-modal__box__body">
           <div class="grid gap-4">
             <p>
-              Thanks for keeping DEV safe. Here is what you can do to flag this
-              user:
+              DEV'yi güvende tuttuğunuz için teşekkürler. İşte bu kullanıcıyı işaretlemek için
+              yapabilecekleriniz:
             </p>
             <div class="crayons-field crayons-field--radio">
               <input
@@ -147,10 +147,9 @@ export function FlagUserModal({ modCenterArticleUrl, authorId }) {
                 }}
               />
               <label htmlFor="vomit-all" class="crayons-field__label">
-                Make all posts by this author less visible
+                Bu yazarın tüm gönderilerini daha az görünür yap
                 <p class="crayons-field__description">
-                  This author consistently posts content that violates DEV's
-                  code of conduct because it is harassing, offensive or spammy.
+                  Bu yazar taciz edici, saldırgan veya spam içerikli gönderiler yayınlıyor.
                 </p>
               </label>
             </div>
@@ -163,7 +162,7 @@ export function FlagUserModal({ modCenterArticleUrl, authorId }) {
                 }`}
                 className="crayons-link crayons-link--brand"
               >
-                Report other inappropriate conduct
+                Diğer uygunsuz davranışları bildirin
               </a>
             </p>
             <div>
@@ -180,14 +179,14 @@ export function FlagUserModal({ modCenterArticleUrl, authorId }) {
                 }}
                 disabled={!isConfirmButtonEnabled}
               >
-                Confirm action
+                Eylemi onaylayın
               </Button>
               <Button
                 class="crayons-btn crayons-btn--secondary"
                 id="cancel-flag-user-action"
                 onClick={toggleFlagUserModal}
               >
-                Cancel
+                İptal
               </Button>
             </div>
           </div>

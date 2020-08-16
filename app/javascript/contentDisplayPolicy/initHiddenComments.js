@@ -2,11 +2,11 @@
 export default function initHiddenComments() {
   function hide(commentId) {
     const confirmMsg = `
-Are you sure you want to hide this comment? It will become hidden in your post, but will still be visible via the comment's permalink.
+Bu yorumu gizlemek istediğinizden emin misiniz? Gönderinizde gizlenecek, ancak yorumun kalıcı bağlantısı aracılığıyla yine de görülebilecektir.
 
-All child comments in this thread will also be hidden.
+Bu konudaki tüm alt yorumlar da gizlenecek.
 
-For further actions, you may consider blocking this person and/or reporting abuse.
+Diğer işlemler için, bu kişiyi engellemeyi ve / veya kötüye kullanımı bildirmeyi düşünebilirsiniz.
     `;
     const confirmHide = window.confirm(confirmMsg);
     if (confirmHide) {

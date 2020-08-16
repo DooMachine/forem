@@ -12,7 +12,7 @@ const LeaveMembershipSection = ({
 
   return (
     <div className="crayons-card p-4 grid gap-2 mb-4 leave_membership_section">
-      <h3>Danger Zone</h3>
+      <h3>Tehlikeli bölge</h3>
       <div>
         <Button
           className="leave_button"
@@ -20,7 +20,7 @@ const LeaveMembershipSection = ({
           type="submit"
           onClick={handleleaveChannelMembership}
         >
-          Leave Channel
+          Kanaldan Ayrıl
         </Button>
       </div>
     </div>

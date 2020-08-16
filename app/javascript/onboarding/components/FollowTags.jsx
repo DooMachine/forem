@@ -114,8 +114,8 @@ class FollowTags extends Component {
           />
           <div className="onboarding-content toggle-bottom">
             <header className="onboarding-content-header">
-              <h1 className="title">What are you interested in?</h1>
-              <h2 className="subtitle">Follow tags to customize your feed</h2>
+              <h1 className="title">Ne ile ilgileniyorsun?</h1>
+              <h2 className="subtitle">Feed'inizi özelleştirmek için etiketleri takip edin</h2>
             </header>
             <div className="onboarding-modal-scroll-container">
               <div data-testid="onboarding-tags" className="onboarding-tags">
@@ -155,14 +155,14 @@ class FollowTags extends Component {
                         {selectedTags.includes(tag) ? (
                           <span>
                             <span className="onboarding-tags__button-default">
-                              ✓ Following
+                              ✓ Takip et
                             </span>
                             <span className="onboarding-tags__button-alt">
-                              Unfollow
+                              Takibi bırak
                             </span>
                           </span>
                         ) : (
-                          'Follow'
+                          'Takip et'
                         )}
                       </button>
                     </div>

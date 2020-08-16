@@ -43,10 +43,10 @@ export const Options = ({
     publishedField = (
       <div data-testid="options__danger-zone" className="crayons-field mb-6">
         <div className="crayons-field__label color-accent-danger">
-          Danger Zone
+          Tehlikeli Alan
         </div>
         <Button variant="danger" onClick={onSaveDraft}>
-          Unpublish post
+          Gönderiyi yayından kaldır
         </Button>
       </div>
     );
@@ -58,17 +58,17 @@ export const Options = ({
         'inline-block bottom-100 left-2 s:left-0 right-2 s:left-auto'
       }
     >
-      <h3 className="mb-6">Post options</h3>
+      <h3 className="mb-6">gönderi seçenekleri</h3>
       <div className="crayons-field mb-6">
         <label htmlFor="canonicalUrl" className="crayons-field__label">
           Canonical URL
         </label>
         <p className="crayons-field__description">
-          Change meta tag
+          Meta tag değiştir
           {` `}
           <code>canonical_url</code>
           {` `}
-          if this post was first published elsewhere (like your own blog).
+          eğer bu gönderi ilk önce başka bir yerde yayınlandıysa (örneğin kişisel blog).
         </p>
         <input
           type="text"
@@ -82,11 +82,11 @@ export const Options = ({
       </div>
       <div className="crayons-field mb-6">
         <label htmlFor="series" className="crayons-field__label">
-          Series
+          Seriler
         </label>
         <p className="crayons-field__description">
-          Will this post be part of a series? Give the series a unique name.
-          (Series visible once it has multiple posts)
+          Bu gönderi bir dizinin parçası olacak mı? Seriye benzersiz bir ad verin.
+          (Birden fazla gönderi olduğunda seri görünür)
         </p>
         <input
           type="text"
@@ -101,7 +101,7 @@ export const Options = ({
       </div>
       {publishedField}
       <Button className="w-100" data-content="exit" onClick={toggleMoreConfig}>
-        Done
+        Bitti
       </Button>
     </Dropdown>
   );

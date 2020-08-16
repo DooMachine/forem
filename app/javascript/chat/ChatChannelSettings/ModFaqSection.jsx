@@ -9,7 +9,7 @@ const ModFaqSection = ({ email, currentMembershipRole }) => {
   return (
     <div className="crayons-card grid gap-2 p-4 faq-section">
       <p className="contact-details">
-        Questions about Connect Channel moderation? Contact
+        Kanal denetimi hakkında sorularınız mı var? İletişim
         <a
           href={`mailto:${email}`}
           target="_blank"

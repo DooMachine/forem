@@ -22,7 +22,7 @@ function moreCommentsButton(comments, articlePath, totalCount) {
           url={linkToCommentsSection(articlePath)}
           data-testid="see-all-comments"
         >
-          See all {totalCount} comments
+          {totalCount} yorumun hepsini gör
         </Button>
       </div>
     );

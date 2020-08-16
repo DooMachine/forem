@@ -16,69 +16,69 @@
   <% end %>
   <% if false # Let's bring it when ready %>
     <a href="/" class="crayons-link crayons-link--block">
-      <%= inline_svg_tag("twemoji/house.svg", aria: true, class: "crayons-icon crayons-icon--default", title: "Home") %>
-      Home
+      <%= inline_svg_tag("twemoji/house.svg", aria: true, class: "crayons-icon crayons-icon--default", title: "Anasayfa") %>
+      Anasayfa
     </a>
   <% end %>
   <% if user_signed_in? %>
     <a href="<%= readinglist_path %>" class="crayons-link crayons-link--block">
-      <%= inline_svg_tag("twemoji/drawer.svg", aria: true, class: "crayons-icon crayons-icon--default", title: "Reading list") %>
-      Reading list <span id="reading-list-count" class="crayons-indicator"></span>
+      <%= inline_svg_tag("twemoji/drawer.svg", aria: true, class: "crayons-icon crayons-icon--default", title: "Okuma listesi") %>
+      Okuma listesi <span id="reading-list-count" class="crayons-indicator"></span>
     </a>
   <% end %>
   <a href="<%= listings_path %>" class="crayons-link crayons-link--block">
-    <%= inline_svg_tag("twemoji/listing.svg", aria: true, class: "crayons-icon crayons-icon--default", title: "Listings") %>
-    Listings
+    <%= inline_svg_tag("twemoji/listing.svg", aria: true, class: "crayons-icon crayons-icon--default", title: "İlanlar") %>
+    İlanlar
   </a>
   <a href="<%= pod_path %>" class="crayons-link crayons-link--block">
-    <%= inline_svg_tag("twemoji/mic.svg", aria: true, class: "crayons-icon crayons-icon--default", title: "Podcasts") %>
-    Podcasts
+    <%= inline_svg_tag("twemoji/mic.svg", aria: true, class: "crayons-icon crayons-icon--default", title: "Podcastler") %>
+    Podcastler
   </a>
   <a href="<%= videos_path %>" class="crayons-link crayons-link--block">
-    <%= inline_svg_tag("twemoji/camera.svg", aria: true, class: "crayons-icon crayons-icon--default", title: "Videos") %>
-    Videos
+    <%= inline_svg_tag("twemoji/camera.svg", aria: true, class: "crayons-icon crayons-icon--default", title: "Videolar") %>
+    Videolar
   </a>
   <a href="<%= tags_path %>" class="crayons-link crayons-link--block">
-    <%= inline_svg_tag("twemoji/tag.svg", aria: true, class: "crayons-icon crayons-icon--default", title: "Tags") %>
-    Tags
+    <%= inline_svg_tag("twemoji/tag.svg", aria: true, class: "crayons-icon crayons-icon--default", title: "Etiketler") %>
+    Etiketler
   </a>
 
-  <a href="javascript:void(0)" class="crayons-link crayons-link--secondary crayons-link--block crayons-link--block--indented fs-s" id="main-nav-more-trigger">More...</a>
+  <a href="javascript:void(0)" class="crayons-link crayons-link--secondary crayons-link--block crayons-link--block--indented fs-s" id="main-nav-more-trigger">Daha...</a>
 
   <div class="hidden" id="main-nav-more">
     <a href="/code-of-conduct" class="crayons-link crayons-link--block">
-      <%= inline_svg_tag("twemoji/thumb-up.svg", aria: true, class: "crayons-icon crayons-icon--default", title: "Code of Conduct") %>
-      Code of Conduct
+      <%= inline_svg_tag("twemoji/thumb-up.svg", aria: true, class: "crayons-icon crayons-icon--default", title: "Davranış kodu") %>
+      Davranış kodu
     </a>
     <a href="/faq" class="crayons-link crayons-link--block">
-      <%= inline_svg_tag("twemoji/bulb.svg", aria: true, class: "crayons-icon crayons-icon--default", title: "FAQ") %>
-      FAQ
+      <%= inline_svg_tag("twemoji/bulb.svg", aria: true, class: "crayons-icon crayons-icon--default", title: "SSS") %>
+      SSS
     </a>
     <% if SiteConfig.shop_url.present? %>
     <a href="<%= SiteConfig.shop_url %>" class="crayons-link crayons-link--block">
-      <%= inline_svg_tag("twemoji/shopping.svg", aria: true, class: "crayons-icon crayons-icon--default", title: "Shop") %>
-      <%= community_name %> Shop
+      <%= inline_svg_tag("twemoji/shopping.svg", aria: true, class: "crayons-icon crayons-icon--default", title: "Dükkan") %>
+      <%= community_name %> Dükkan
     </a>
     <% end %>
     <a href="/sponsors" class="crayons-link crayons-link--block">
-      <%= inline_svg_tag("twemoji/heart.svg", aria: true, class: "crayons-icon crayons-icon--default", title: "Sponsors") %>
-      Sponsors
+      <%= inline_svg_tag("twemoji/heart.svg", aria: true, class: "crayons-icon crayons-icon--default", title: "Sponsorlar") %>
+      Sponsorlar
     </a>
     <a href="/about" class="crayons-link crayons-link--block">
-      <%= inline_svg_tag("rainbowdev.svg", aria: true, width: 24, height: 24, class: "crayons-icon crayons-icon--default p-1", title: "About") %>
-      About
+      <%= inline_svg_tag("rainbowdev.svg", aria: true, width: 24, height: 24, class: "crayons-icon crayons-icon--default p-1", title: "Hakkımızda") %>
+      Hakkımızda
     </a>
     <a href="/privacy" class="crayons-link crayons-link--block">
-      <%= inline_svg_tag("twemoji/smart.svg", aria: true, class: "crayons-icon crayons-icon--default", title: "Privacy policy") %>
-      Privacy policy
+      <%= inline_svg_tag("twemoji/smart.svg", aria: true, class: "crayons-icon crayons-icon--default", title: "Gizlilik Politikası") %>
+      Gizlilik Politikası
     </a>
     <a href="/terms" class="crayons-link crayons-link--block">
-      <%= inline_svg_tag("twemoji/look.svg", aria: true, class: "crayons-icon crayons-icon--default", title: "Terms of use") %>
-      Terms of use
+      <%= inline_svg_tag("twemoji/look.svg", aria: true, class: "crayons-icon crayons-icon--default", title: "Kullanım Şartları") %>
+      Kullanım Şartları
     </a>
     <a href="/contact" class="crayons-link crayons-link--block">
-      <%= inline_svg_tag("twemoji/contact.svg", aria: true, class: "crayons-icon crayons-icon--default", title: "Contact") %>
-      Contact
+      <%= inline_svg_tag("twemoji/contact.svg", aria: true, class: "crayons-icon crayons-icon--default", title: "İletişim") %>
+      İletişim
     </a>
     <div class="flex justify-around p-4 mt-4 border-solid border-0 border-t-1 border-base-10">
       <%= render partial: "layouts/social_media" %>
@@ -88,15 +88,15 @@
 
 <nav class="sidebar-tags-browser mb-6 overflow-y-auto scrolling-touch" aria-label="Secondary sidebar nav">
   <% if user_signed_in? %>
-    <header class="fs-xs color-base-50 ff-accent fw-bold p-2">MY TAGS</header>
+    <header class="fs-xs color-base-50 ff-accent fw-bold p-2">ETİKETLERİM </header>
     <div id="sidebar-nav-followed-tags" class="sidebar-nav-followed-tags"></div>
   <% end %>
   <div id="sidebar-nav-default-tags" class="sidebar-nav-default-tags <%= "showing" unless user_signed_in? %>">
     <header id="tag-separator" class="fs-xs color-base-50 ff-accent fw-bold p-2">
       <% if user_signed_in? %>
-        OTHER POPULAR TAGS
+        DİĞER POPÜLER ETİKETLER
       <% else %>
-        DESIGN YOUR EXPERIENCE
+        DENEYİMİNİZİ TASARLAYIN
       <% end %>
     </header>
     <% Tag.where(supported: true).order(hotness_score: :desc).limit(30).pluck(:id, :name).each do |tag_array| %>
@@ -107,7 +107,7 @@
         <a class="follow-action-button sidebar-nav-link-follow crayons-btn crayons-btn--s crayons-btn--secondary_"
           href="#" id="sidebar-nav-link-follow-<%= tag_array.second %>"
           data-info='{"id":<%= tag_array.first %>,"className":"Tag"}'>
-          Follow
+          Takip et
         </a>
       </div>
     <% end %>

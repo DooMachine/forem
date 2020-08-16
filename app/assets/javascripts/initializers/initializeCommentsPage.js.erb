@@ -435,7 +435,7 @@ function handleImageUpload(event, randomIdNumber) {
     var image = document.getElementById('image-upload-' + randomIdNumber).files;
     if (image.length > 0) {
       document.getElementById("image-upload-file-label-" + randomIdNumber).style.color = '#888888';
-      document.getElementById("image-upload-file-label-" + randomIdNumber).innerHTML = "Uploading...";
+      document.getElementById("image-upload-file-label-" + randomIdNumber).innerHTML = "Yükleniyor...";
       document.getElementById("image-upload-submit-" + randomIdNumber).value = "uploading";
       setTimeout(function () {
         document.getElementById("image-upload-submit-" + randomIdNumber).click(function () { });

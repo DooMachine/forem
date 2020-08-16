@@ -64,7 +64,7 @@ function buildArticleHTML(article) {
         article.path +
         '#comments" class="crayons-btn crayons-btn--s crayons-btn--ghost-dimmed crayons-btn--icon-left "><svg class="crayons-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z"/></svg>' +
         commentsCount +
-        '<span class="hidden s:inline">&nbsp;comments</span></a>';
+        '<span class="hidden s:inline">&nbsp;yorum</span></a>';
     }
 
     var flareTag = '';
@@ -86,11 +86,11 @@ function buildArticleHTML(article) {
       flareTag = "<span class='crayons-story__flare-tag'>podcast</span>";
     }
     if (article.class_name === 'Comment') {
-      flareTag = "<span class='crayons-story__flare-tag'>comment</span>";
+      flareTag = "<span class='crayons-story__flare-tag'>yorum</span>";
     }
     if (article.class_name === 'User') {
       flareTag =
-        "<span class='crayons-story__flare-tag' style='background:#5874d9;color:white;'>person</span>";
+        "<span class='crayons-story__flare-tag' style='background:#5874d9;color:white;'>kişi</span>";
     }
 
     var rc = article.public_reactions_count;
@@ -103,7 +103,7 @@ function buildArticleHTML(article) {
         article.path +
         '" class="crayons-btn crayons-btn--s crayons-btn--ghost-dimmed crayons-btn--icon-left"><svg class="crayons-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M18.884 12.595l.01.011L12 19.5l-6.894-6.894.01-.01A4.875 4.875 0 0112 5.73a4.875 4.875 0 016.884 6.865zM6.431 7.037a3.375 3.375 0 000 4.773L12 17.38l5.569-5.569a3.375 3.375 0 10-4.773-4.773L9.613 10.22l-1.06-1.062 2.371-2.372a3.375 3.375 0 00-4.492.25v.001z"/></svg>' +
         reactionsCount +
-        '<span class="hidden s:inline">&nbsp;reactions</span></a>';
+        '<span class="hidden s:inline">&nbsp;tepki</span></a>';
     }
 
     var picUrl;
@@ -245,8 +245,8 @@ function buildArticleHTML(article) {
         '<button type="button" class="crayons-btn crayons-btn--secondary crayons-btn--s bookmark-button" data-reactable-id="' +
         article.id +
         '">\
-                      <span class="bm-initial">Save</span>\
-                      <span class="bm-success">Saved</span>\
+                      <span class="bm-initial">Kaydet</span>\
+                      <span class="bm-success">Kaydedildi</span>\
                     </button>';
     } else if (article.class_name === 'User') {
       saveButton =

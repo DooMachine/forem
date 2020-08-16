@@ -20,7 +20,7 @@ const CopyIcon = () => (
     role="img"
     aria-labelledby="fc5f15add1e114844f5e"
   >
-    <title id="fc5f15add1e114844f5e">Copy Invitation Url</title>
+    <title id="fc5f15add1e114844f5e">Davet linkini kopyala</title>
     <path d="M7 6V3a1 1 0 011-1h12a1 1 0 011 1v14a1 1 0 01-1 1h-3v3c0 .552-.45 1-1.007 1H4.007A1 1 0 013 21l.003-14c0-.552.45-1 1.007-1H7zm2 0h8v10h2V4H9v2zm-2 5v2h6v-2H7zm0 4v2h6v-2H7z" />
   </svg>
 );
@@ -85,7 +85,7 @@ export default class InvitationLinkManager extends Component {
 
     return (
       <div className="p-4 grid gap-2 crayons-card my-4 invitation-section">
-        <h3 className="text-center title">Invitation Link</h3>
+        <h3 className="text-center title">Davet Linki</h3>
         <clipboard-copy
           onClick={this.copyText}
           for="chat-channel-unviation-url"
@@ -112,7 +112,7 @@ export default class InvitationLinkManager extends Component {
             role="alert"
             className={`fs-s ${showImageCopiedMessage ? '' : 'opacity-0'}`}
           >
-            Copied!
+            Kopyalandı!
           </span>
         </clipboard-copy>
       </div>

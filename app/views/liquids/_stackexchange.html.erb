@@ -12,8 +12,8 @@
         <div class="ltag__stackexchange--post-metadata">
           <span><%= Time.zone.at(created_at).strftime("%b %e '%y") %></span>
           <% if post_type == "question" %>
-            <span>Comments: <%= comment_count %></span>
-            <span>Answers: <%= answer_count %></span>
+            <span>Yorumlar: <%= comment_count %></span>
+            <span>Yanıtlar: <%= answer_count %></span>
           <% end %>
         </div>
       </div>
@@ -33,7 +33,7 @@
   </div>
   <div class="ltag__stackexchange--btn--container">
     <button class="ltag__stackexchange--btn" type="button">
-      <a href="<%= post_url %>" target="_blank" rel="noopener noreferrer">Open Full <%= post_type.capitalize %></a>
+      <a href="<%= post_url %>" target="_blank" rel="noopener noreferrer">Tam Aç <%= post_type.capitalize %></a>
     </button>
   </div>
 </div>

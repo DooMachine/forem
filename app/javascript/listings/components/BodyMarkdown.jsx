@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 const BodyMarkdown = ({ onChange, defaultValue }) => (
   <div className="field">
     <label className="listingform__label" htmlFor="body_markdown">
-      Body Markdown
+      İçerik (Markdown)
       <textarea
         className="listingform__input listingform__bodymarkdown"
         id="body_markdown"
         name="listing[body_markdown]"
         maxLength="400"
-        placeholder="400 characters max, 12 line break max, no images allowed, *markdown is encouraged*"
+        placeholder="En fazla 400 karakter, en fazla 12 satır sonu, resimlere izin verilmez, * markdown önerilir*"
         value={defaultValue}
         onInput={onChange}
       />

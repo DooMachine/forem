@@ -57,9 +57,9 @@ describe('<Form />', () => {
 
       queryByTestId('article-form__body');
 
-      expect(queryByAltText(/post cover/i)).toBeNull();
+      expect(queryByAltText(/Kapak resmi/i)).toBeNull();
       expect(queryByTestId('article-form__title')).toBeNull();
-      expect(queryByLabelText('Post Tags')).toBeNull();
+      expect(queryByLabelText('Gönderi Etiketleri')).toBeNull();
     });
   });
 
@@ -113,10 +113,10 @@ describe('<Form />', () => {
 
       getByAltText(/post cover/i);
       queryByTestId('article-form__title');
-      getByLabelText('Post Tags');
+      getByLabelText('Gönderi Etiketleri');
       queryByTestId('article-form__body');
 
-      const coverImageInput = getByLabelText('Change');
+      const coverImageInput = getByLabelText('Değiştir');
 
       // Allow any image format
       expect(coverImageInput.getAttribute('accept')).toEqual('image/*');

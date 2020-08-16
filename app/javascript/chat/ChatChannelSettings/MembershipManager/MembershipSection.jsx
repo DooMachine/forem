@@ -10,7 +10,7 @@ const MembershipSection = ({
   membershipCount,
 }) => {
   if (!memberships || memberships.length === 0) {
-    return <p className="lh-base">No membership</p>;
+    return <p className="lh-base">Üyelik yok</p>;
   }
 
   return (

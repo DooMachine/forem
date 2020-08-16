@@ -18,14 +18,14 @@ const MessageModal = ({
       onSubmit={onSubmit}
     >
       <header className="mb-4">
-        <h2 className="fs-xl fw-bold lh-tight">Interested?</h2>
+        <h2 className="fs-xl fw-bold lh-tight">İlgileniyor musun?</h2>
         {isCurrentUserOnListing ? (
           <p className="color-base-70">
-            This is your active listing. Any member can contact you via this
-            form.
+            Bu sizin aktif listenizdir. Herhangi bir üye sizinle bu form aracılığıyla iletişime
+            geçebilir.
           </p>
         ) : (
-          <p className="color-base-70">Message {` ${listing.author.name} `}</p>
+          <p className="color-base-70">{` ${listing.author.name} `} isimli kullanıcıya mesaj at</p>
         )}
       </header>
       <textarea
@@ -41,10 +41,10 @@ const MessageModal = ({
       >
         {isCurrentUserOnListing &&
           'Message must be relevant and on-topic with the listing.'}
-        All private interactions <b>must</b> abide by the{' '}
+        Tüm özel etkileşimler <b>mutlaka</b>{' '}
         <a href="/code-of-conduct" className="crayons-link crayons-link--brand">
-          Code of Conduct
-        </a>
+          Davranış kurallari
+        </a>na{' '} uymalidir
         .
       </p>
       <div className="flex">
@@ -54,7 +54,7 @@ const MessageModal = ({
           tagName="button"
           type="submit"
         >
-          Send
+          Gönder
         </Button>
       </div>
     </form>

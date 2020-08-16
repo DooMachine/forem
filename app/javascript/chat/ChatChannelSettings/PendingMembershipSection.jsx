@@ -19,7 +19,7 @@ const PendingMembershipSection = ({
       className="p-4 grid gap-2 crayons-card mb-4 pending_memberships"
       data-pending-count={pendingMemberships ? pendingMemberships.length : 0}
     >
-      <h3 className="mb-2">Pending Invitations</h3>
+      <h3 className="mb-2">Bekleyen Davetler</h3>
       {pendingMemberships && pendingMemberships.length > 0
         ? pendingMemberships.map((pendingMembership) => (
             <Membership

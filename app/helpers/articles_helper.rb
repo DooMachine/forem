@@ -1,11 +1,11 @@
 module ArticlesHelper
   def sort_options
     [
-      ["Recently Created", "creation-desc"],
-      ["Recently Published", "published-desc"],
-      ["Most Views", "views-desc"],
-      ["Most Reactions", "reactions-desc"],
-      ["Most Comments", "comments-desc"],
+      ["Son Oluşturulan", "creation-desc"],
+      ["Son Yayınlanan", "published-desc"],
+      ["En Çok Görüntülenme", "views-desc"],
+      ["En Çok Tepki", "reactions-desc"],
+      ["En Çok Yorum", "comments-desc"],
     ]
   end
 

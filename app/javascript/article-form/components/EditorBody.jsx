@@ -20,7 +20,7 @@ export const EditorBody = ({
         className="crayons-textfield crayons-textfield--ghost crayons-article-form__body__field"
         id="article_body_markdown"
         aria-label="Post Content"
-        placeholder="Write your post content here..."
+        placeholder="Gönderi içeriğini yaz..."
         value={defaultValue}
         onInput={onChange}
         onFocus={(_event) => {

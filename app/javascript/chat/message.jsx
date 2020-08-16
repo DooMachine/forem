@@ -43,13 +43,13 @@ const Message = ({
 
       <div className="messagebody__dropdownmenu">
         <Button variant="ghost" onClick={(_) => onEditMessageTrigger(id)}>
-          Edit
+          Düzenle
         </Button>
         <Button
           variant="ghost-danger"
           onClick={(_) => onDeleteMessageTrigger(id)}
         >
-          Delete
+          Sil
         </Button>
       </div>
     </div>

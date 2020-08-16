@@ -26,7 +26,7 @@ const FilterText = ({ selectedTags, query, value }) => {
     <h1>
       {selectedTags.length === 0 && query.length === 0
         ? value
-        : 'Nothing with this filter 🤔'}
+        : 'Bu filtreyle hiçbir şey yok 🤔'}
     </h1>
   );
 };
@@ -126,7 +126,7 @@ export class ReadingList extends Component {
           <FilterText
             selectedTags={selectedTags}
             query={query}
-            value="Your Reading List is Lonely"
+            value="Okuma Listeniz Yapayalnız"
           />
           <h3>
             Hit the
@@ -149,7 +149,7 @@ export class ReadingList extends Component {
         <FilterText
           selectedTags={selectedTags}
           query={query}
-          value="Your Archive List is Lonely"
+          value="Arşiv Listeniz Yapayalnız"
         />
       </div>
     );
@@ -168,7 +168,7 @@ export class ReadingList extends Component {
 
     const isStatusViewValid = this.statusViewValid();
 
-    const archiveButtonLabel = isStatusViewValid ? 'archive' : 'unarchive';
+    const archiveButtonLabel = isStatusViewValid ? 'arşivle' : 'arşivden kaldır';
     const itemsToRender = items.map((item) => {
       return (
         <ItemListItem item={item}>
@@ -182,7 +182,7 @@ export class ReadingList extends Component {
 
     const snackBar = archiving ? (
       <div className="snackbar">
-        {isStatusViewValid ? 'Archiving...' : 'Unarchiving...'}
+        {isStatusViewValid ? 'Arşivleniyor...' : 'Arşivden kaldırılıyor...'}
       </div>
     ) : (
       ''
@@ -192,12 +192,12 @@ export class ReadingList extends Component {
         <div className="side-bar">
           <div className="widget filters">
             <input
-              aria-label="Search your list"
+              aria-label="Listenizi arayın"
               onKeyUp={this.onSearchBoxType}
-              placeHolder="search your list"
+              placeHolder="listede ara"
             />
             <div className="filters-header">
-              <h4 className="filters-header-text">my tags</h4>
+              <h4 className="filters-header-text">etiketlerim</h4>
               {Boolean(selectedTags.length) && (
                 <a
                   className="filters-header-action"
@@ -209,7 +209,7 @@ export class ReadingList extends Component {
                   onClick={this.clearSelectedTags}
                   data-no-instant
                 >
-                  clear all
+                  hepsini temizle
                 </a>
               )}
             </div>
@@ -225,7 +225,7 @@ export class ReadingList extends Component {
                 onClick={(e) => this.toggleStatusView(e)}
                 data-no-instant
               >
-                {isStatusViewValid ? 'View Archive' : 'View Reading List'}
+                {isStatusViewValid ? 'Arşivi Görüntüle' : 'Okuma Listesini Görüntüle'}
               </a>
             </div>
           </div>

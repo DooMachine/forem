@@ -13,10 +13,10 @@ export const Default = () => (
       Feed
     </a>
     <a href="/" className="crayons-tabs__item">
-      Popular
+      Popüler
     </a>
     <a href="/" className="crayons-tabs__item">
-      Latest
+      En son
     </a>
   </div>
 );

@@ -45,11 +45,11 @@ module ApplicationHelper
 
   def title_with_timeframe(page_title:, timeframe:, content_for: false)
     sub_titles = {
-      "week" => "Top posts this week",
-      "month" => "Top posts this month",
-      "year" => "Top posts this year",
-      "infinity" => "All posts",
-      "latest" => "Latest posts"
+      "week" => "Bu haftanın en popüler yayınları",
+      "month" => "Bu ayın en popüler yayınları",
+      "year" => "Bu yılın en iyi gönderileri",
+      "infinity" => "Tüm gönderiler",
+      "latest" => "Son gönderiler"
     }
 
     if timeframe.blank? || sub_titles[timeframe].blank?

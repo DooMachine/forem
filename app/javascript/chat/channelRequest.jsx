@@ -5,7 +5,7 @@ const ChannelRequest = ({ resource: data, handleJoiningRequest }) => (
   <div className="activechatchannel__activeArticle activesendrequest">
     <div className="joining-message">
       <h2>Hey {data.user.name} !</h2>
-      <h3>You are not a member of this group yet. Send a request to join.</h3>
+      <h3>Henüz bu gruba üye değilsiniz. Katılmak için bir istek gönderin.</h3>
     </div>
     <div className="user-picture">
       <div className="chatmessage__profilepic">
@@ -30,12 +30,12 @@ const ChannelRequest = ({ resource: data, handleJoiningRequest }) => (
           data-channel-id={data.channel.id}
         >
           {' '}
-          Join {data.channel.name}{' '}
+          {data.channel.name}{' '} kanalına katıl
         </button>
       ) : (
         <button type="button" className="cta">
           {' '}
-          Requested Already{' '}
+          Zaten İstendi{' '}
         </button>
       )}
     </div>

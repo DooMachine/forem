@@ -86,7 +86,7 @@ export default class ManageActiveMembership extends Component {
     return (
       <div className="pt-3">
         <div className="p-4 grid gap-2 crayons-card my-4 mx-auto membership-manager">
-          <h2 className="text-title">Chat Channel Membership manager</h2>
+          <h2 className="text-title">Sohbet Kanalı Üyelik yöneticisi</h2>
         </div>
         <div className="p-4 grid gap-2 crayons-card my-4">
           <input

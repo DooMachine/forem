@@ -26,7 +26,7 @@ describe('<BodyMarkdown />', () => {
 
     const { getByLabelText } = render(<BodyMarkdown {...props} />);
 
-    const textArea = getByLabelText('Body Markdown');
+    const textArea = getByLabelText('İçerik');
 
     expect(textArea.getAttribute('placeholder')).toEqual(
       '400 characters max, 12 line break max, no images allowed, *markdown is encouraged*',

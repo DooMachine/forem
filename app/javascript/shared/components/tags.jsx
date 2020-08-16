@@ -396,7 +396,7 @@ class Tags extends Component {
             onClick={this.handleRulesClick}
             data-content={tag.name}
           >
-            {showingRulesForTag === tag.name ? 'Hide Rules' : 'View Rules'}
+            {showingRulesForTag === tag.name ? 'Kuralları Gizle' : 'Kuralları Görüntüle'}
           </button>
         ) : (
           ''
@@ -422,8 +422,8 @@ class Tags extends Component {
         <div className={`${classPrefix}__tagsoptions`}>
           {searchResultsRows}
           <div className={`${classPrefix}__tagsoptionsbottomrow`}>
-            Some tags have rules and guidelines determined by community
-            moderators
+            Bazı etiketlerin topluluk moderatörleri tarafından belirlenen kuralları ve yönergeleri
+            vardır
           </div>
         </div>
       );
@@ -431,7 +431,7 @@ class Tags extends Component {
 
     return (
       <div className={`${classPrefix}__tagswrapper`}>
-        {listing && <label htmlFor="Tags">Tags</label>}
+        {listing && <label htmlFor="Tags">Etiketler</label>}
         <input
           data-testid="tag-input"
           aria-label="Post Tags"
@@ -443,7 +443,7 @@ class Tags extends Component {
           }}
           className={`${`${fieldClassName} ${classPrefix}`}__tags`}
           name="listing[tag_list]"
-          placeholder={`Add up to ${maxTags} tags...`}
+          placeholder={`${maxTags} kadar etiket ekleyebilirsin...`}
           autoComplete="off"
           value={defaultValue}
           onInput={this.handleInput}

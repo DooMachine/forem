@@ -14,13 +14,13 @@ const SettingsFrom = ({
       data-testid="settings-form"
       className="crayons-card p-4 grid gap-2 mb-4 settings-section"
     >
-      <h3>Channel Settings</h3>
+      <h3>Kanal Ayarları</h3>
       <div className="crayons-field">
         <label
           className="crayons-field__label"
           htmlFor="chat_channel_description"
         >
-          Description
+          Açıklama
         </label>
         <textarea
           className="crayons-textfield"
@@ -39,12 +39,12 @@ const SettingsFrom = ({
           onChange={handleChannelDiscoverableStatus}
         />
         <label htmlFor="c2" className="crayons-field__label">
-          Channel Discoverable
+          Kanal Keşfedilebilir
         </label>
       </div>
       <div>
         <Button type="submit" onClick={handleChannelDescriptionChanges}>
-          Submit
+          Gönder
         </Button>
       </div>
     </div>

@@ -11,8 +11,9 @@ const RequestListItem = ({
   <div className="crayons-card mb-6">
     <div className="crayons-card__body channel-request-card">
       <div className="request-message d-flex flex-wrap">
-        <b>{request.name}</b> requested to join{' '}
-        <b>{request.chat_channel_name}</b>
+        <b>{request.name}</b> {' '}
+        <b>{request.chat_channel_name}</b>{' '}
+        kanalına girmek istiyor
       </div>
       <div className="request-actions">
         <Button
@@ -23,7 +24,7 @@ const RequestListItem = ({
           data-channel-id={request.chat_channel_id}
           data-membership-id={request.membership_id}
         >
-          Reject
+          Reddet
         </Button>
         <Button
           className="m-2"
@@ -32,7 +33,7 @@ const RequestListItem = ({
           data-channel-id={request.chat_channel_id}
           data-membership-id={request.membership_id}
         >
-          Accept
+          Kabul et
         </Button>
       </div>
     </div>

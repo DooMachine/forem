@@ -13,7 +13,7 @@ const Icon = () => (
     role="img"
     aria-labelledby="75abcb76478519ca4eb9"
   >
-    <title id="75abcb76478519ca4eb9">Post options</title>
+    <title id="75abcb76478519ca4eb9">Gönderi seçenekleri</title>
     <path d="M12 1l9.5 5.5v11L12 23l-9.5-5.5v-11L12 1zm0 2.311L4.5 7.653v8.694l7.5 4.342 7.5-4.342V7.653L12 3.311zM12 16a4 4 0 110-8 4 4 0 010 8zm0-2a2 2 0 100-4 2 2 0 000 4z" />
   </svg>
 );
@@ -59,14 +59,14 @@ export class EditorActions extends Component {
       <div className="crayons-article-form__footer">
         <Button className="mr-2 whitespace-nowrap" onClick={onPublish} disabled>
           {published && version === 'v2'
-            ? 'Publishing...'
-            : `Saving ${version === 'v2' ? 'draft' : ''}...`}
+            ? 'Yayınlanıyor...'
+            : `Kaydediliyor ${version === 'v2' ? 'draft' : ''}...`}
         </Button>
       </div>
     ) : (
       <div className="crayons-article-form__footer">
         <Button className="mr-2 whitespace-nowrap" onClick={onPublish}>
-          {published || version === 'v1' ? 'Save changes' : 'Publish'}
+          {published || version === 'v1' ? 'Değişiklikleri kaydet' : 'Yayınla'}
         </Button>
 
         {published || version === 'v1' ? (
@@ -77,7 +77,7 @@ export class EditorActions extends Component {
             className="mr-2 whitespace-nowrap"
             onClick={onSaveDraft}
           >
-            Save <span className="hidden s:inline">draft</span>
+            Kaydet <span className="hidden s:inline">draft</span>
           </Button>
         )}
         {version === 'v2' && (
@@ -107,7 +107,7 @@ export class EditorActions extends Component {
             className="whitespace-nowrap fw-normal"
             size="s"
           >
-            Revert <span className="hidden s:inline">new changes</span>
+            <span className="hidden s:inline">Değişiklikleri</span> iptal et
           </Button>
         )}
       </div>

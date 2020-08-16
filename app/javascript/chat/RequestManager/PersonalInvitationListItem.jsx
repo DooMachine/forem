@@ -7,7 +7,7 @@ const RequestListItem = ({ request, updateMembership }) => (
   <div className="crayons-card mb-6">
     <div className="crayons-card__body channel-request-card">
       <div className="request-message d-flex flex-wrap">
-        You got invitation to join <b>{request.chat_channel_name}</b>.
+        <b>{request.chat_channel_name}</b> kanalına davet edildiniz.
       </div>
       <div className="request-actions">
         <Button
@@ -21,7 +21,7 @@ const RequestListItem = ({ request, updateMembership }) => (
           data-user-action="reject"
         >
           {' '}
-          Reject
+          Reddet
         </Button>
         <Button
           className="m-2"
@@ -33,7 +33,7 @@ const RequestListItem = ({ request, updateMembership }) => (
           data-user-action="accept"
         >
           {' '}
-          Accept
+          Kabul et
         </Button>
       </div>
     </div>

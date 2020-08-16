@@ -8,7 +8,7 @@ export default {
 };
 
 export const Default = () => (
-  <div className="crayons-notice">This is Default Notice content.</div>
+  <div className="crayons-notice">Bu, Varsayılan Bildirim içeriğidir.</div>
 );
 
 Default.story = {
@@ -17,7 +17,7 @@ Default.story = {
 
 export const Danger = () => (
   <div className="crayons-notice crayons-notice--danger">
-    This is Default Notice content.
+    Bu, Varsayılan Bildirim içeriğidir.
   </div>
 );
 
@@ -27,7 +27,7 @@ Danger.story = {
 
 export const Warning = () => (
   <div className="crayons-notice crayons-notice--warning">
-    This is Warning Notice content.
+    Bu, Uyarı Bildirimi içeriğidir.
   </div>
 );
 
@@ -37,7 +37,7 @@ Warning.story = {
 
 export const Success = () => (
   <div className="crayons-notice crayons-notice--success">
-    This is Success Notice content.
+    Bu, Başarı Bildirimi içeriğidir.
   </div>
 );
 
@@ -47,7 +47,7 @@ Success.story = {
 
 export const Info = () => (
   <div className="crayons-notice crayons-notice--info">
-    This is Info Notice content.
+    Bu Bilgi Bildirimi içeriğidir.
   </div>
 );
 

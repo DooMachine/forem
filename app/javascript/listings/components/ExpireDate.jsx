@@ -12,8 +12,7 @@ const ExpireDate = ({ onChange, defaultValue }) => {
   return (
     <div className="field">
       <label className="listingform__label" htmlFor="expires_at">
-        Custom Expire Date (if applicable for time sensitive events, deadlines,
-        etc.)
+        Özel Son Kullanma Tarihi (zamana duyarlı olaylar, son tarihler vb. için geçerliyse)
       </label>
       <input
         type="date"

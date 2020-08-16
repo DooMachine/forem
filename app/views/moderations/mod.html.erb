@@ -24,10 +24,10 @@
       <%= hidden_field_tag(:id, @moderatable.id) %>
       <% if @moderatable.approved %>
         <%= hidden_field_tag(:approved, false) %>
-        <button class="cta approval-button approval-removal">Remove approval</button>
+        <button class="cta approval-button approval-removal">Onayı kaldır</button>
       <% else %>
         <%= hidden_field_tag(:approved, true) %>
-        <button class="cta approval-button">Mark as approved</button>
+        <button class="cta approval-button">Onaylandı olarak işaretle</button>
       <% end %>
     <% end %>
     <hr />
@@ -43,7 +43,7 @@
       <img class="reacted-emoji" src="<%= asset_path("emoji/emoji-one-thumbs-up.png") %>" alt="Thumbs up emoji" />
       <%= inline_svg_tag("checkmark.svg", aria: true, class: "crayons-icon reaction-checkmark", title: "Checkmark") %>
     </div>
-    <span class="vote-text">High Quality</span>
+    <span class="vote-text">Yüksek Kalite</span>
   </button>
     <button class="reaction-button <%= Reaction.cached_any_reactions_for?(@moderatable, current_user, "thumbsdown") ? "reacted" : "" %>"
             data-reactable-id="<%= @moderatable.id %>"
@@ -54,7 +54,7 @@
         <img class="reacted-emoji downvote" src="<%= asset_path("emoji/emoji-one-thumbs-down.png") %>" alt="Thumbs down emoji" />
         <%= inline_svg_tag("checkmark.svg", aria: true, class: "crayons-icon reaction-checkmark", title: "Checkmark") %>
       </div>
-      <span class="vote-text">Low Quality</span>
+      <span class="vote-text">Düşük Kalite</span>
     </button>
     <button class="reaction-button <%= Reaction.cached_any_reactions_for?(@moderatable, current_user, "vomit") ? "reacted" : "" %>"
             data-reactable-id="<%= @moderatable.id %>"
@@ -65,7 +65,7 @@
         <img class="reacted-emoji" src="<%= asset_path("emoji/emoji-one-nausea-face.png") %>" alt="Nausea down emoji" />
         <%= inline_svg_tag("checkmark.svg", aria: true, class: "crayons-icon reaction-checkmark", title: "Checkmark") %>
       </div>
-      <span class="vote-text">Flag to Admins</span>
+      <span class="vote-text">Yöneticilere İşaretle</span>
     </button>
   </div>
 
@@ -78,14 +78,14 @@
       <a href="/admin/users/<%= @moderatable.user_id %>" data-no-instant>Admin:User</a></h3>
   <% end %>
   <p>
-    <b style="font-size:1em">All negative reactions are private.</b>
+    <b style="font-size:1em">Tüm olumsuz tepkiler özeldir.</b>
   </p>
   <p>
-    Use <b>High Quality</b> to move this content "up" for any reason (quality, usefulness, etc.).
+    Bu içeriği herhangi bir nedenle (kalite, kullanışlılık, vb.) "Yukarı" taşımak için <b> Yüksek Kalite Butonu </b> kullanın.
     <br />
-    Use <b>Low Quality</b> to move this content "down" for any reason (quality, usefulness, etc.).
+    Bu içeriği herhangi bir nedenle (kalite, kullanışlılık, vb.) "Aşağı" taşımak için <b> Düşük Kalite Butonu</b> 'yi kullanın.
     <br />
-    Use <b>Mark As Spam</b> for code of conduct violations (harassment, being a jerk, spam, etc.).
+    Davranış kuralları ihlalleri (taciz, aptallık, spam vb.) İçin <b> Spam Olarak İşaretle </b> 'yi kullanın.
   </p>
   <div class="tag-mod-form" style="display: flex; flex-direction: column; align-items: center;">
     <h2>Flag <a href="<%= @moderatable.user.path %>"><%= @moderatable.user.username %></a> as Abusive</h2>
@@ -98,16 +98,16 @@
         <img class="reacted-emoji" src="<%= asset_path("emoji/emoji-one-nausea-face.png") %>" alt="Nausea down emoji" />
         <%= inline_svg_tag("checkmark.svg", aria: true, class: "crayons-icon reaction-checkmark", title: "Checkmark") %>
       </div>
-      <span class="vote-text">Flag User</span>
+      <span class="vote-text">Kullanıcıyı İşaretle</span>
     </button>
     <p>
-      This is the equivalent of vomiting on <b>all</b> of this user's articles.
+      Bu, kullanıcının makalelerinin <b> tümüne </b> kötülemeye eşdeğerdir.
     </p>
   </div>
   <% if current_user.any_admin? && @moderatable.class.name == "Comment" && !@moderatable.deleted %>
     <div class="crayons-card crayons-card--secondary p-4 flex items-center">
       <div class="fw-medium flex-1" style="text-align: left;">
-        <p class="fw-bold fs-xl">Delete This Comment</p>
+        <p class="fw-bold fs-xl">Bu Yorumu Sil</p>
       </div>
       <div class="flex">
         <%= button_to "Delete Comment", comment_admin_delete_path(@moderatable.id), method: :patch, class: "crayons-btn crayons-btn--secondary ml-2" %>
@@ -116,12 +116,12 @@
   <% end %>
   <% if @hidden_comments.present? %>
     <div class="tag-mod-form">
-      <h2>Hidden Comments</h2>
+      <h2>Gizlenen Yorumlar</h2>
       <form>
         <ul id="hidden-comments">
         <% @hidden_comments.each do |comment| %>
           <li>
-            <a href="<%= comment.path %>">Comment by <%= comment.user.username %></a>
+            <a href="<%= comment.path %>"><%= comment.user.username %> tarafından</a>
           </li>
         <% end %>
         </ul>
@@ -130,12 +130,12 @@
   <% end %>
   <% if @allowed_to_adjust %>
     <div class="tag-mod-form">
-      <h2>Tag Adjustments</h2>
+      <h2>Etiket Ayarlamaları</h2>
       <%= form_for(@tag_adjustment) do |f| %>
-        <b>Current live tags:</b> <%= @moderatable.tag_list %><br>
+        <b>Şuanki etiketler:</b> <%= @moderatable.tag_list %><br>
         <% if @tag_adjustment.errors.any? %>
           <div id="error_explanation">
-            <h2><%= pluralize(@tag_adjustment.errors.count, "error") %> prohibited this block from being saved:</h2>
+            <h2><%= pluralize(@tag_adjustment.errors.count, "error") %> bu bloğun kaydedilmesi yasaklandı:</h2>
             <ul>
               <% @tag_adjustment.errors.full_messages.each do |message| %>
                 <li><%= message %></li>
@@ -153,7 +153,7 @@
         <% if @moderatable.tag_list.size < 4 %>
           <div class="tag-mod-addition-radio">
             <%= f.radio_button :adjustment_type, "addition", required: true %>
-            <%= f.label :adjustment_type, "Add", value: "addition" %>
+            <%= f.label :adjustment_type, "Ekle", value: "addition" %>
           </div>
         <% end %>
         <% if current_user.has_role?(:super_admin) %>
@@ -161,14 +161,14 @@
         <% else %>
           <%= f.select :tag_name, @tag_moderator_tags, { prompt: "Select Tag" }, required: true %>
         <% end %>
-        <%= f.text_area :reason_for_adjustment, placeholder: "Reason for adjustment (Be super kind) - Only the reason is needed, the notification will take care of the rest.", required: true %>
-        <%= f.submit "Submit Tag Adjustment" %>
+        <%= f.text_area :reason_for_adjustment, placeholder: "Düzenleme nedeni (Süper nazik ol) - Sadece neden gerekli, bildirim gerisini halledecektir.", required: true %>
+        <%= f.submit "Etiket Ayarlamasını Gönder" %>
       <% end %>
       <% if @adjustments.present? %>
         <% @adjustments.each do |adjustment| %>
           <% if current_user.any_admin? || adjustment.user_id == current_user.id %>
             <%= form_for(adjustment, url: "/tag_adjustments/#{adjustment.id}", html: { method: :delete, onsubmit: "return confirm('Are you sure you want to undo the #{adjustment.adjustment_type} of the #{adjustment.tag_name} tag?')" }) do |f| %>
-              <b><%= adjustment.adjustment_type == "removal" ? "Currently removed tag" : "Currently added tag" %>:</b> <%= adjustment.tag_name %>
+              <b><%= adjustment.adjustment_type == "removal" ? "Şu anda kaldırılan etiket" : "Şu anda eklenen etiket" %>:</b> <%= adjustment.tag_name %>
               <%= f.submit "×", id: "undo" %>
             <% end %>
           <% end %>
@@ -182,7 +182,7 @@
       <% @rating_vote = RatingVote.where(article_id: @moderatable.id, user_id: current_user.id).first %>
       <% rating_hash = { "Novice" => 1, "Beginner" => 2, "Mid-level" => 3, "Advanced" => 4, "Expert" => 5 } %>
 
-      <h2>Experience Level of Post</h2>
+      <h2>Gönderi Deneyim Seviyesi</h2>
 
       <% rating_hash.each do |rating_name, rating_level| %>
       <button
@@ -209,7 +209,7 @@
         <%= form_for(BufferUpdate.new) do |f| %>
           <h2>Suggest a Tweet for @<%= SiteConfig.social_media_handles["twitter"] %></h2>
           <%= f.hidden_field :article_id, value: @moderatable.id %>
-          <%= f.text_area :body_text, maxlength: 220, placeholder: "Can be a TLDR of the post, an interesting quote from the post, or bullet points from topics covered in the post, etc." %>
+          <%= f.text_area :body_text, maxlength: 220, placeholder: "Gönderinin ,zet', gönderiden ilginç bir alıntı veya gönderide ele alınan konulardan madde işaretleri vb. olabilir." %>
           <%= f.submit "Share Tweet Suggestion" %>
         <% end %>
       </div>

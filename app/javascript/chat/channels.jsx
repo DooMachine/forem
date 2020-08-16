@@ -66,8 +66,7 @@ const Channels = ({
         <span role="img" aria-label="emoji">
           👋
         </span>{' '}
-        Welcome to
-        <b> DEV Connect</b>! You may message anyone you mutually follow.
+        <b>Hey</b>! Karşılıklı olarak takip ettiğiniz herkese mesaj gönderebilirsiniz.
       </div>
     );
   }
@@ -89,7 +88,7 @@ const Channels = ({
             DEV Settings
           </a>
           <a href="/report-abuse" role="menuitem">
-            Report Abuse
+            Kötüye Kullanımı Bildir
           </a>
         </div>
       </div>
@@ -107,7 +106,7 @@ const Channels = ({
         {discoverableChannels.length > 0 && filterQuery.length > 0 ? (
           <div>
             <span className="crayons-indicator crayons-indicator--">
-              Global Channel Search
+              Global Kanal Arama
             </span>
             {discoverableChannels}
           </div>

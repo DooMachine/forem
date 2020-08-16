@@ -88,14 +88,15 @@ class ProfileForm extends Component {
           />
           <div className="onboarding-content about">
             <header className="onboarding-content-header">
-              <h1 className="title">Build your profile</h1>
+              <h1 className="title">Profilinizi oluşturun</h1>
               <h2
                 data-testid="onboarding-profile-subtitle"
                 className="subtitle"
               >
-                Tell us a little bit about yourself — this is how others will
-                see you on {communityConfig.communityName}. You’ll always be
-                able to edit this later in your Settings.
+                Bize biraz kendinden bahset — {communityConfig.communityName} 
+                kullanıcıları seni böyle görecek. Bunu daha sonra
+                her zaman ayarlarınızdan düzenleyebileceksiniz.
+                
               </h2>
             </header>
             <div className="current-user-info">
@@ -121,7 +122,7 @@ class ProfileForm extends Component {
                 />
               </label>
               <label htmlFor="location">
-                Where are you located?
+                Bulunduğun yer neresi?
                 <input
                   type="text"
                   name="location"
@@ -132,7 +133,7 @@ class ProfileForm extends Component {
                 />
               </label>
               <label htmlFor="employment_title">
-                What is your title?
+                Mesleğin?
                 <input
                   type="text"
                   name="employment_title"
@@ -143,12 +144,12 @@ class ProfileForm extends Component {
                 />
               </label>
               <label htmlFor="employer_name">
-                Where do you work?
+                Nerede çalışıyorsun?
                 <input
                   type="text"
                   name="employer_name"
                   id="employer_name"
-                  placeholder="e.g. Company name, self-employed, etc."
+                  placeholder="e.g. Şirket ismi, serbest çalışan, girişimci, etc."
                   onChange={this.handleChange}
                   maxLength="60"
                   className="onboarding-form-input--last"

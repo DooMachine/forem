@@ -18,7 +18,7 @@ function toggleTemplateTypeButton(form, e) {
 
 const noResponsesHTML = `
 <div class="mod-response-wrapper mod-response-wrapper-empty">
-  <p>🤔... It looks like you don't have any templates yet.</p>
+  <p>🤔... Görünüşe göre henüz şablonunuz yok.</p>
 </div>
 `;
 
@@ -33,7 +33,7 @@ function buildHTML(response, typeOf) {
           <div class="mod-response-wrapper">
             <span>${obj.title}</span>
             <p>${obj.content}</p>
-            <button class="insert-template-button" type="button" data-content="${obj.content}">INSERT</button>
+            <button class="insert-template-button" type="button" data-content="${obj.content}">EKLE</button>
           </div>
         `;
       })
@@ -46,8 +46,8 @@ function buildHTML(response, typeOf) {
             <div class="mod-response-wrapper">
               <span>${obj.title}</span>
               <p>${obj.content}</p>
-              <button class="insert-template-button" type="button" data-content="${obj.content}">INSERT</button>
-              <button class="moderator-submit-button" type="submit" data-response-template-id="${obj.id}">SEND AS MOD</button>
+              <button class="insert-template-button" type="button" data-content="${obj.content}">EKLE</button>
+              <button class="moderator-submit-button" type="submit" data-response-template-id="${obj.id}">MOD OLARAK GÖNDER</button>
             </div>
           `;
       })
@@ -87,20 +87,20 @@ function submitAsModerator(responseTemplateId, parentId) {
         alert('This comment already exists.');
       } else if (response.error === 'error') {
         alert(
-          `There was a problem submitting this comment: ${response.status}`,
+          `Bu yorumu gönderirken bir sorun oluştu: ${response.status}`,
         );
       }
     });
 }
 
 const confirmMsg = `
-Are you sure you want to submit this comment as Sloan?
+Bu yorumu Sloan olarak göndermek istediğinizden emin misiniz??
 
-It will be sent immediately and users will be notified.
+Hemen gönderilecek ve kullanıcılar bilgilendirilecektir..
 
-Make sure this is the appropriate comment for the situation.
+Durum için uygun yorum olduğundan emin olun.
 
-This action is not reversible.`;
+Bu eylem geri alınamaz.`;
 
 function addClickListeners(form) {
   const responsesContainer = form.querySelector(
@@ -124,7 +124,7 @@ function addClickListeners(form) {
       const textAreaReplaceable =
         textArea.value === null ||
         textArea.value === '' ||
-        confirm('Are you sure you want to replace your current comment draft?');
+        confirm('Mevcut yorum taslağınızı değiştirmek istediğinizden emin misiniz??');
 
       if (textAreaReplaceable) {
         textArea.value = content;

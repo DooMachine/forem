@@ -29,12 +29,12 @@
   <thead>
     <tr>
       <th scope="col">ID</th>
-      <th scope="col">Profile</th>
-      <th scope="col">Comments</th>
-      <th scope="col">Badges</th>
-      <th scope="col">Last Comment</th>
+      <th scope="col">Profil</th>
+      <th scope="col">Yorumlar</th>
+      <th scope="col">Rozetler</th>
+      <th scope="col">Son Yorum</th>
       <% if params[:state] == "potential" %>
-        <th scope="col">Action</th>
+        <th scope="col">Eylem</th>
       <% end %>
     </tr>
   </thead>
@@ -45,7 +45,7 @@
       <td><%= link_to mod.username, admin_user_path(mod.id) %></td>
       <td><%= mod.comments_count %></td>
       <td><%= mod.badge_achievements_count %></td>
-      <td><%= time_ago_in_words mod.last_comment_at %> ago</td>
+      <td><%= time_ago_in_words mod.last_comment_at %> önce</td>
       <% if params[:state] == "potential" %>
         <td>
           <%= form_with model: [:admin, mod], url: admin_mod_path(mod.id), method: :patch, local: true do |f| %>

@@ -8,7 +8,7 @@ export class SaveButton extends Component {
 
     const { isBookmarked } = props;
 
-    this.state = { buttonText: isBookmarked ? 'Saved' : 'Save' };
+    this.state = { buttonText: isBookmarked ? 'Kaydedildi' : 'Kaydet' };
   }
 
   render() {
@@ -17,16 +17,16 @@ export class SaveButton extends Component {
     const { article, isBookmarked, onClick } = this.props;
 
     const mouseOver = (_e) => {
-      this.setState({ buttonText: isBookmarked ? 'Unsave' : 'Save' });
+      this.setState({ buttonText: isBookmarked ? 'Kaydı iptal et' : 'Kaydet' });
     };
 
     const mouseOut = (_e) => {
-      this.setState({ buttonText: isBookmarked ? 'Saved' : 'Save' });
+      this.setState({ buttonText: isBookmarked ? 'Kaydedildi' : 'Kaydet' });
     };
 
     const handleClick = (_e) => {
       onClick(_e);
-      this.setState({ buttonText: isBookmarked ? 'Unsave' : 'Saved' });
+      this.setState({ buttonText: isBookmarked ? 'Kaydı iptal et' : 'Kaydedildi' });
     };
 
     if (article.class_name === 'Article') {
