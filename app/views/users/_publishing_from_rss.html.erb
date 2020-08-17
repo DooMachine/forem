@@ -1,50 +1,51 @@
 <div class="crayons-card grid p-6 mb-6 gap-6">
   <div class="grid gap-4">
-    <h3>Publishing to <%= community_name %> from RSS</h3>
+    <h3>RSS'den <% = community_name%> üzerinde yayınlanıyor</h3>
     <% if @user.feed_url.present? %>
       <%= form_for(@user) do |f| %>
         <%= f.hidden_field :feed_url, value: @user.feed_url %>
         <%= f.hidden_field :tab, value: @tab %>
         <div class="flex items-center">
-          <button type="submit" class="crayons-btn crayons-btn--secondary">Fetch feed now</button>
-          <p>Last Fetched: <time id="rss-fetch-time" datetime="<%= @user.feed_fetched_at.iso8601 %>"></time></p>
+          <button type="submit" class="crayons-btn crayons-btn--secondary">Feed'i şimdi getir</button>
+          <p>Son Getirilen: <time id="rss-fetch-time" datetime="<%= @user.feed_fetched_at.iso8601 %>"></time></p>
         </div>
       <% end %>
     <% end %>
     <p>
-      Posts will land in your <a href="/dashboard">dashboard</a>
-      <strong>as drafts</strong>, and then you can publish from there (or give <%= community_name %> admins permission to do so).
+      Gönderiler <a href="/dashboard"> gösterge tablonuza </a> <strong> taslak </strong> 
+      olarak ulaşır ve ardından buradan yayınlayabilirsiniz (veya <% = community_name%> yöneticilerine bunu yapma izni verebilirsiniz ).
     </p>
-    <p>Formatting will typically look good, but you may have to make manual fixes. In the case of Medium, you may have to manually fix embeds.</p>
+    <p>Biçimlendirme genellikle iyi görünür, ancak el ile düzeltmeler yapmanız gerekebilir. Medium durumunda, yerleştirmeleri manuel olarak düzeltmeniz gerekebilir.</p>
     <p>
-      To find out more about how drafts are created from your feed, read this
-      <a href="/p/publishing_from_rss_guide">guide</a>.
+      Feed'inizden taslakların nasıl oluşturulduğu hakkında daha fazla bilgi edinmek için bu
+      <a href="/p/publishing_from_rss_guide"> kılavuzu </a> okuyun.
     </p>
     <p>
-      Your feed will be fetched every time you submit this form and updates will be automatically fetched periodically thereafter. Contact
-      <%= email_link %> if you encounter issues.
+      Bu formu her gönderdiğinizde feed'iniz getirilecek ve güncellemeler daha sonra periyodik olarak otomatik olarak getirilecektir. Sorunla karşılaşırsanız
+      <% = email_link%> ile iletişime geçin.
+      
     </p>
-    <p>FYI: Medium RSS feed URLs are <em>https://medium.com/feed/@your_username</em></p>
-    <p><em>By submitting your RSS Feed URL, you agree that you own and/or have permission to syndicate the associated content.</em></p>
+    <p> Bilginize: Orta RSS beslemesi URL'leri <em>https://medium.com/feed/@kullanıcıadınız</em> </p>
+    <p> <em> RSS Beslemesi URL'nizi göndererek, şunları kabul etmiş olursunuz: ilişkili içeriğe sahip olmak ve/veya ortak kullanım izni almak. </em> </p>
   </div>
 
   <%= form_for @user, html: { class: "grid gap-6" } do |f| %>
     <div class="crayons-field">
       <%= f.label :feed_url, "RSS Feed URL", class: "crayons-field__label" %>
-      <%= f.url_field :feed_url, placeholder: "https://yoursite.com/feed", class: "crayons-textfield" %>
+      <%= f.url_field :feed_url, placeholder: "https://siteniz.com/feed", class: "crayons-textfield" %>
     </div>
 
     <div class="crayons-field crayons-field--checkbox">
       <%= f.check_box :feed_mark_canonical, class: "crayons-checkbox" %>
-      <%= f.label :feed_mark_canonical, "Mark the RSS source as canonical URL by default <p class='crayons-field__description'>If you check this box, the post will automatically mark the feed source as the canonical URL.</p>".html_safe, class: "crayons-field__label" %>
+      <%= f.label :feed_mark_canonical, "RSS kaynağını varsayılan olarak standart URL olarak işaretleyin <p class = 'crayons-field__description'> Bu kutuyu işaretlerseniz, gönderi otomatik olarak besleme kaynağını standart URL olarak işaretleyecektir. </p>".html_safe, class: "crayons-field__label" %>
     </div>
 
     <div class="crayons-field crayons-field--checkbox">
       <%= f.check_box :feed_referential_link, class: "crayons-checkbox" %>
       <%= f.label :feed_referential_link,
-                  "Replace self-referential links with #{community_name}-specific links <p class='crayons-field__description'>\
-                  If you check this box, the post will automatically change any URLs included in the post to refer to the version of that article on #{community_name} if available. \
-                  This is primarily meant for folks migrating their entire blog onto #{community_name}.</p>".html_safe,
+                  "Kendi kendine referans veren bağlantıları #{community_name}-özel bağlantılarla değiştirin <p class='crayons-field__description'>\
+                  Bu kutuyu işaretlerseniz, gönderi, yayına dahil edilen tüm URL'leri otomatik olarak o makalenin #{community_name} topluluğundaki sürümüne başvuracak şekilde değiştirir.. \
+                  Bu, öncelikle bloglarının tamamını #{community_name} topluluğuna taşıyan kişiler içindir. </p>".html_safe,
                   class: "crayons-field__label" %>
     </div>
 

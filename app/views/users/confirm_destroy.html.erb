@@ -1,33 +1,33 @@
 <div class="user-settings-page">
-  <h2> Destroy your account</h2>
+  <h2> Hesabınızı silin</h2>
   <div class="settings-form">
     <h4 style="font-weight:400;">
       <%= form_tag user_full_delete_path, method: :delete, autocomplete: "off", id: "delete__account" do %>
-        Deleting your account will:
+        Hesbınızı silmek:
         <ul class="delete__account">
-          <li>delete your profile, along with your Twitter and/or GitHub associations.
-            This does not include app permissions. You will have to remove them yourself on
-            <a href="https://twitter.com/settings/applications">Twitter profile settings</a> and
-            <a href="https://github.com/settings/applications">GitHub profile settings</a>.
+          <li>Twitter ve / veya GitHub ilişkilendirmelerinizle birlikte profilinizi silecek.
+           Bu, uygulama izinlerini içermez. Onları kendiniz iptal etmeniz gerekecek:
+            <a href="https://twitter.com/settings/applications">Twitter ayarları</a> ve
+            <a href="https://github.com/settings/applications">GitHub ayarları</a>.
           </li>
           <%# TODO: expand the delete messaging later %>
-          <li>delete any and all content you have, such as articles, comments, your reading list or chat messages.</li>
-          <li>allow your username to become available to anyone.</li>
+          <li>makaleler, yorumlar, okuma listeniz veya sohbet mesajları gibi sahip olduğunuz tüm içeriği silin.</li>
+          <li>kullanıcı adınızın herkesin kullanımına açık olmasına izin verin.</li>
         </ul>
         <div class="field">
           <label for="delete__account__username__field">
-            <b>To delete your account, type in your username:</b>
+            <b> Hesabınızı silmek için kullanıcı adınızı yazın: </b>
           </label>
           <input type="text" name="delete__account__username__field" id="delete__account__username__field">
         </div>
         <div class="field">
           <label for="delete__account__verification__field">
-            <b>For verification, type the words:</b><i> delete my account</i>
+            <b> Doğrulama için şu kelimeleri yazın: </b> <i> hesabımı sil </i>
           </label>
           <input type="text" name="delete__account__verification__field" id="delete__account__verification__field">
         </div>
         <button class="big-action danger-button small-button" id="delete__account__btn" type="submit" disabled="true">
-          DELETE ACCOUNT
+          HESABI SİL
         </button>
       <% end %>
     </h4>
@@ -44,12 +44,12 @@
       deleteAcccountVerificationInput.addEventListener('input', disableDeleteAccountBtn);
     </script>
     <p>
-      If you would like to keep your content under the <%= link_to "@ghost", "/ghost" %> account,
-      please <%= email_link(text: "click here", additional_info: { subject: "Request Account Deletion", body: @email_body }) %>
+      İçeriğinizi <% = link_to "@ghost", "/ ghost"%> hesabı altında tutmak istiyorsanız,
+      lütfen <%= email_link(text: "buraya tıklayın", additional_info: { subject: "Hesap Silme İsteği", body: @email_body }) %>
     </p>
 
     <p>
-      Feel free to contact <%= email_link %> with any questions.
+      Herhangi bir sorunuz varsa <% = email_link%> ile iletişime geçmekten çekinmeyin.
     </p>
   </div>
 </div>

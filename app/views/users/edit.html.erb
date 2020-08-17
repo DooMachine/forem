@@ -14,14 +14,14 @@
 
 <% if params[:state] == "previous-registration" %>
   <div class="crayons-banner crayons-banner--error">
-    There is an existing account authorized with that social account. Contact
-    <%= email_link %> if this is a mistake.
+    Bu sosyal hesapla yetkilendirilmiş mevcut bir hesap var. 
+    Bu bir hataysa <% = email_link%> ile iletişime geçin.
   </div>
 <% end %>
 
 <header class="crayons-layout crayons-layout--limited crayons-layout--1-col p-4">
   <% if @tab == "organization" && @organizations.present? %>
-    <h1 class="fs-2xl s:fs-3xl">Settings for
+    <h1 class="fs-2xl s:fs-3xl">Ayarlar
       <span class="organization-dropdown">
         <select id="organization-dropdown-select" onchange="window.location.href=this.value">
           <% options = @organizations.pluck(:slug, :id).each do |arr| %>
@@ -37,7 +37,7 @@
     </h1>
   <% else %>
     <h1 class="fs-2xl s:fs-3xl">
-      Settings for <a href="<%= user_url(@user) || "#" %>">@<%= @user.username.truncate(User::USERNAME_MAX_LENGTH) %></a>
+      Ayarlar <a href="<%= user_url(@user) || "#" %>">@<%= @user.username.truncate(User::USERNAME_MAX_LENGTH) %></a>
     </h1>
   <% end %>
 </header>
@@ -65,13 +65,13 @@
   <div class="crayons-layout__content">
     <% if current_user.email.blank? %>
       <div class="crayons-notice crayons-notice--warning mb-6">
-        <h3 class="mb-2">Confirm your email to complete your profile.</h3>
+        <h3 class="mb-2">Profilinizi tamamlamak için e-postanızı onaylayın.</h3>
         <p>
-          While you're at it, go ahead and fill everything out.
+          O işi hallederken devam edin ve her şeyi doldurun.
           <% if @user.twitter_username.blank? %>
-            Connect your twitter account as well to complete your identity.
+            Kimliğinizi tamamlamak için twitter hesabınızı da bağlayın.
           <% elsif @user.github_username.blank? %>
-            Connect your github account as well to complete your identity.
+            Kimliğinizi tamamlamak için github hesabınızı da bağlayın.
           <% end %>
         </p>
       </div>
@@ -79,17 +79,17 @@
 
     <% if @user.unconfirmed_email.present? %>
       <div class="crayons-notice crayons-notice--warning mb-6">
-        <h3 class="mb-2">Email verification.</h3>
-        <p>You have requested a change to <a href="mailto:<%= @user.unconfirmed_email %>"><%= @user.unconfirmed_email %></a>. Check your inbox for the verification link to finalize the change.</p>
+        <h3 class="mb-2">E-posta Doğrulama.</h3>
+        <p><a href="mailto:<%= @user.unconfirmed_email %> "> <% = @ user.unconfirmed_email%> </a> için bir değişiklik talep ettiniz. Değişikliği tamamlamak için gelen kutunuzu doğrulama bağlantısı için kontrol edin.</p>
       </div>
     <% end %>
 
     <% if @user.errors.any? %>
-      <%= render partial: "users/errors", locals: { errors: @user.errors, title_suffix: "prohibited your profile from being saved" } %>
+      <%= render partial: "users/errors", locals: { errors: @user.errors, title_suffix: "profilinizin kaydedilmesini yasakladı" } %>
     <% end %>
 
     <% if @organization&.errors&.any? %>
-      <%= render partial: "users/errors", locals: { errors: @organization.errors, title_suffix: "prohibited your organization profile from being saved" } %>
+      <%= render partial: "users/errors", locals: { errors: @organization.errors, title_suffix: "kuruluş profilinizin kaydedilmesini yasakladı" } %>
     <% end %>
 
     <%= render "users/" + @tab.tr("-", "_"), tab: @tab %>

@@ -1,88 +1,88 @@
 <%= form_for @user do |f| %>
   <div class="crayons-card mb-6 grid gap-4 p-6">
     <header>
-      <h3>Email Notification Settings</h3>
+      <h3>E-posta Bildirim Ayarları</h3>
     </header>
     <div class="crayons-field crayons-field--checkbox">
       <%= f.check_box :email_newsletter, class: "crayons-checkbox" %>
-      <%= f.label :email_newsletter, "Send me weekly newsletter emails", class: "crayons-field__label" %>
+      <%= f.label :email_newsletter, "Bana haftalık haber bülteni e-postaları gönder", class: "crayons-field__label" %>
     </div>
     <div class="crayons-field crayons-field--checkbox">
       <%= f.check_box :email_digest_periodic, class: "crayons-checkbox" %>
-      <%= f.label :email_digest_periodic, "Send me a periodic digest of top posts from my tags", class: "crayons-field__label" %>
+      <%= f.label :email_digest_periodic, "Etiketlerimden bana periyodik bir özet gönder", class: "crayons-field__label" %>
     </div>
     <% if current_user.a_sustaining_member? %>
       <div class="crayons-field crayons-field--checkbox">
         <%= f.check_box :email_membership_newsletter, class: "crayons-checkbox" %>
-        <%= f.label :email_membership_newsletter, "Send me sustaining membership newsletter emails", class: "crayons-field__label" %>
+        <%= f.label :email_membership_newsletter, "Bana sürekli üyelik bülteni e-postaları gönder", class: "crayons-field__label" %>
       </div>
     <% end %>
     <% if current_user.tag_moderator? %>
       <div class="crayons-field crayons-field--checkbox">
         <%= f.check_box :email_tag_mod_newsletter, class: "crayons-checkbox" %>
-        <%= f.label :email_tag_mod_newsletter, "Send me tag moderator newsletter emails", class: "crayons-field__label" %>
+        <%= f.label :email_tag_mod_newsletter, "Bana etiket moderatörü haber bülteni e-postaları gönder", class: "crayons-field__label" %>
       </div>
     <% end %>
     <% if current_user.has_role?(:trusted) %>
       <div class="crayons-field crayons-field--checkbox">
         <%= f.check_box :email_community_mod_newsletter, class: "crayons-checkbox" %>
-        <%= f.label :email_community_mod_newsletter, "Send me community moderator newsletter emails", class: "crayons-field__label" %>
+        <%= f.label :email_community_mod_newsletter, "Bana topluluk moderatörü haber bülteni e-postaları gönder", class: "crayons-field__label" %>
       </div>
     <% end %>
     <div class="crayons-field crayons-field--checkbox">
       <%= f.check_box :email_comment_notifications, class: "crayons-checkbox" %>
-      <%= f.label :email_comment_notifications, "Send me an email when someone replies to me in a comment thread", class: "crayons-field__label" %>
+      <%= f.label :email_comment_notifications, "Biri bir yorum dizisinde bana yanıt verdiğinde bana e-posta gönder", class: "crayons-field__label" %>
     </div>
     <div class="crayons-field crayons-field--checkbox">
       <%= f.check_box :email_follower_notifications, class: "crayons-checkbox" %>
-      <%= f.label :email_follower_notifications, "Send me an email when someone new follows me", class: "crayons-field__label" %>
+      <%= f.label :email_follower_notifications, "Beni yeni biri takip ettiğinde bana e-posta gönder", class: "crayons-field__label" %>
     </div>
     <div class="crayons-field crayons-field--checkbox">
       <%= f.check_box :email_mention_notifications, class: "crayons-checkbox" %>
-      <%= f.label :email_mention_notifications, "Send me an email when someone mentions me", class: "crayons-field__label" %>
+      <%= f.label :email_mention_notifications, "Biri benden bahsettiğinde bana e-posta gönder", class: "crayons-field__label" %>
     </div>
     <div class="crayons-field crayons-field--checkbox">
       <%= f.check_box :email_badge_notifications, class: "crayons-checkbox" %>
-      <%= f.label :email_badge_notifications, "Send me an email when I receive a badge", class: "crayons-field__label" %>
+      <%= f.label :email_badge_notifications, "Bir rozet aldığımda bana bir e-posta gönder", class: "crayons-field__label" %>
     </div>
     <div class="crayons-field crayons-field--checkbox">
       <%= f.check_box :email_connect_messages, class: "crayons-checkbox" %>
-      <%= f.label :email_connect_messages, "Send me an email when I receive a direct message (while inactive)", class: "crayons-field__label" %>
+      <%= f.label :email_connect_messages, "Doğrudan mesaj aldığımda bana bir e-posta gönder (aktif değilken)", class: "crayons-field__label" %>
     </div>
     <div class="crayons-field crayons-field--checkbox">
       <%= f.check_box :email_unread_notifications, class: "crayons-checkbox" %>
-      <%= f.label :email_unread_notifications, "Send me occasional reminders that I have unread notifications on #{community_name}", class: "crayons-field__label" %>
+      <%= f.label :email_unread_notifications, "# {Community_name} topluluğunda okunmamış bildirimlerim olduğuna dair bana ara sıra hatırlatıcılar gönder", class: "crayons-field__label" %>
     </div>
   </div>
 
   <div class="crayons-card mb-6 grid gap-6 p-6">
     <header>
-      <h3 class="mb-2">Mobile Notification Settings (Beta)</h3>
-      <p>Additional settings will be rolled out as new notification features are made available.</p>
+      <h3 class="mb-2">Mobil Bildirim Ayarları (Beta)</h3>
+      <p>Yeni bildirim özellikleri kullanıma sunulduğunda ek ayarlar kullanıma sunulacaktır.</p>
     </header>
     <div class="crayons-field crayons-field--checkbox">
       <%= f.check_box :mobile_comment_notifications, class: "crayons-checkbox" %>
-      <%= f.label :mobile_comment_notifications, "Notify me when someone replies to me in a comment thread", class: "crayons-field__label" %>
+      <%= f.label :mobile_comment_notifications, "Biri bir yorum dizisinde bana yanıt verdiğinde bana haber ver", class: "crayons-field__label" %>
     </div>
   </div>
 
   <div class="crayons-card mb-6 grid gap-6 p-6">
     <header>
-      <h3 class="mb-2">Platform Notification Settings</h3>
-      <p>Notifications that only appear on the <a href="<%= notifications_path %>">notifications page</a>.</p>
+      <h3 class="mb-2">Platform Bildirim Ayarları</h3>
+      <p>Yalnızca <a href="<%= notification_path %> "> bildirimler sayfasında görünen bildirimler</a>.</p>
     </header>
     <div class="crayons-field crayons-field--checkbox">
       <%= f.check_box :welcome_notifications, class: "crayons-checkbox" %>
-      <%= f.label :welcome_notifications, "Send me occasional tips on how to enhance my #{community_name} experience", class: "crayons-field__label" %>
+      <%= f.label :welcome_notifications, "# {Community_name} deneyimimi nasıl geliştirebileceğim konusunda bana ara sıra ipuçları gönder", class: "crayons-field__label" %>
     </div>
   </div>
 
   <% if current_user.trusted %>
     <div class="crayons-card mb-6 grid gap-6 p-6">
-      <h3>Mod Notification Settings</h3>
+      <h3>Mod Bildirim Ayarları</h3>
       <div class="crayons-field crayons-field--checkbox">
         <%= f.check_box :mod_roundrobin_notifications, class: "crayons-checkbox" %>
-        <%= f.label :mod_roundrobin_notifications, "Send me occasional community-success mod notifications", class: "crayons-field__label" %>
+        <%= f.label :mod_roundrobin_notifications, "Bana ara sıra topluluk başarısı modu bildirimleri gönder", class: "crayons-field__label" %>
       </div>
     </div>
   <% end %>
@@ -90,7 +90,7 @@
   <div class="mb-6 grid gap-6 p-6">
   <%= f.hidden_field :tab, value: @tab %>
     <div>
-      <button type="submit" class="crayons-btn">Save</button>
+      <button type="submit" class="crayons-btn">Kaydet</button>
     </div>
   </div>
 

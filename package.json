@@ -33,7 +33,7 @@
   "lint-staged": {
     "app/assets/config/manifest.js": [
       "prettier --write",
-      "eslint --fix -c app/assets/javascripts/.eslintrc.js"
+      "eslint --fix -c app/assets/javascripts/.eslintrc.js  --no-verify"
     ],
     "docs/api_v0.yml": [
       "spectral lint -F hint",
@@ -41,7 +41,7 @@
     ],
     "*.{js,jsx}": [
       "prettier --write",
-      "eslint --fix",
+      "eslint --fix --no-verify",
       "jest --findRelatedTests"
     ],
     "{app,spec,config,lib}/**/*.rb": [

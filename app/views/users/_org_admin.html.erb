@@ -2,7 +2,7 @@
 <%= render "shared/webcomponents_loader_script" %>
 
 <div class="crayons-card grid gap-6 p-6 mb-6">
-  <h2>Organization Members</h2>
+  <h2>Kuruluş Üyeleri</h2>
 
   <div class="grid gap-2">
     <% @org_organization_memberships.each do |org_membership| %>
@@ -22,21 +22,21 @@
           <% if org_membership.user == @user && org_membership.type_of_user == "admin" %>
           <!-- TODO: ? -->
           <% elsif org_membership.user != @user && org_membership.type_of_user == "admin" %>
-            <%= form_tag "/users/remove_org_admin", onsubmit: "return confirm('Are you sure you want to take away admin status from #{org_membership.user.name}?');" do %>
+            <%= form_tag "/users/remove_org_admin", onsubmit: "return confirm('Yönetici durumunu #{org_membership.user.name} hesabından kaldırmak istediğinizden emin misiniz?');" do %>
               <%= hidden_field_tag "user_id", org_membership.user_id %>
               <%= hidden_field_tag "organization_id", @organization.id %>
-              <button class="crayons-btn crayons-btn--secondary ml-2" title="Revoke admin status" type="submit">Revoke admin status</button>
+              <button class="crayons-btn crayons-btn--secondary ml-2" title="Yönetici durumunu iptal edin" type="submit">Yönetici durumunu iptal edin</button>
             <% end %>
           <% else %>
             <%= form_tag "/users/add_org_admin", onsubmit: "return confirm('Are you sure you want to give #{org_membership.user.name} admin status?');" do %>
               <%= hidden_field_tag "user_id", org_membership.user_id %>
               <%= hidden_field_tag "organization_id", @organization.id %>
-              <button class="crayons-btn crayons-btn--secondary ml-2" title="Make admin" type="submit">Make admin</button>
+              <button class="crayons-btn crayons-btn--secondary ml-2" title="Make admin" type="submit">Admin yap</button>
             <% end %>
             <%= form_tag "/users/remove_from_org", onsubmit: "return confirm('Are you sure you want remove #{org_membership.user.name} from the organization?');" do %>
               <%= hidden_field_tag "user_id", org_membership.user_id %>
               <%= hidden_field_tag "organization_id", @organization.id %>
-              <button class="crayons-btn crayons-btn--secondary ml-2" title="Remove from org" type="submit">Remove from org</button>
+              <button class="crayons-btn crayons-btn--secondary ml-2" title="Kuruluştan kaldır" type="submit">Kuruluştan kaldır</button>
             <% end %>
           <% end %>
         </div>
@@ -45,39 +45,39 @@
   </div>
 
   <header>
-    <h3 class="mb-2">Grow the team</h3>
-    <p>Invite teammates by sending them the secret and the following instructions:</p>
+    <h3 class="mb-2">Ekibi büyütün</h3>
+    <p>Takım arkadaşlarını onlara sırrı ve aşağıdaki talimatları göndererek davet edin:</p>
   </header>
 
   <div class="crayons-card crayons-card--secondary p-4">
     <ol class="list-decimal pl-6 mb-2">
-      <li>Sign up at
-        <a href="<%= app_url %>"><%= app_url %></a></li>
-      <li>Navigate to
-        <a href="<%= app_url(user_settings_path(:organization)) %>"><%= app_url(user_settings_path(:organization)) %></a>
+      <li>
+        <a href="<%= app_url %>"><%= app_url %></a></li>\'da kaydolun
+      <li>
+        <a href="<%= app_url(user_settings_path(:organization)) %>"><%= app_url(user_settings_path(:organization)) %></a> linkine geçin
       </li>
-      <li>Paste the secret code below and click <b>Join Organization</b></li>
+      <li>Gizli kodu aşağıya yapıştırın ve <b>Kuruluşa katıl </b> 'a tıklayın</li>
     </ol>
     <p>
-      Your secret code is:
+      Gizli kodunuz:
       <clipboard-copy for="settings-org-secret" onclick="nextElementSibling.hidden = false">
-        <input type="text" class="ff-accent ff-s fw-medium" id="settings-org-secret" value="<%= @organization.secret %>" readonly aria-label="Organization secret (to be rotated regularly)">
-        <%= inline_svg_tag("copy.svg", aria: true, class: "crayons-icon", title: "Copy to clipboard") %>
+        <input type="text" class="ff-accent ff-s fw-medium" id="settings-org-secret" value="<%= @organization.secret %>" readonly aria-label="Organizasyon anahtarı (düzenli olarak rotasyona tabi tutulacak)">
+        <%= inline_svg_tag("copy.svg", aria: true, class: "crayons-icon", title: "Panoya kopyala") %>
       </clipboard-copy>
-      <span class="copy-text-announcer" id="copy-text-announcer" role="alert" hidden>Copied to clipboard!</span>
+      <span class="copy-text-announcer" id="copy-text-announcer" role="alert" hidden>Panoya kopyalandı!</span>
   </div>
 
   <div class="flex items-center">
-    <%= form_tag "/organizations/generate_new_secret", onsubmit: "return confirm('Are you sure you want to generate a new secret? All outstanding secrets will be invalid.');" do %>
+    <%= form_tag "/organizations/generate_new_secret", onsubmit: "return confirm('Yeni bir anahtar oluşturmak istediğinizden emin misiniz? Tüm bekleyen anahtarlar geçersiz olacaktır.');" do %>
       <%= hidden_field_tag "organization[id]", @organization.id %>
-      <button type="submit" class="crayons-btn crayons-btn--secondary">Generate new secret</button>
+      <button type="submit" class="crayons-btn crayons-btn--secondary">Yeni anahtar oluştur</button>
     <% end %>
     <p class="fw-medium color-accent-danger ml-3">You should rotate this regularly!</p>
   </div>
 </div>
 
 <div class="crayons-card grid gap-6 p-6 mb-6">
-  <h2>Organization details</h2>
+  <h2>Organizasyon ayrıntıları</h2>
 
   <%= form_for @organization, html: { class: "grid gap-6" } do |f| %>
     <%= f.hidden_field :id %>
@@ -88,7 +88,7 @@
     <div class="crayons-field">
       <%= f.label :slug, "Username", class: "crayons-field__label" %>
       <%= f.text_field :slug, maxlength: 18, minlength: 2, class: "crayons-textfield", placeholder: "acmeinc" %>
-      <p class="crayons-field__description">Your organization's URL is: <%= app_url(@organization.slug) %></p>
+      <p class="crayons-field__description">Kuruluşunuzun URL'si: <% = app_url (@ organization.slug)%></p>
     </div>
 
     <div class="crayons-field">
@@ -138,12 +138,12 @@
     <div class="crayons-field">
       <%= f.label :tag_line, class: "crayons-field__label" %>
       <%= f.text_field :tag_line, maxlength: 60, class: "crayons-textfield" %>
-      <p class="crayons-field__description">Limit of 60 characters</p>
+      <p class="crayons-field__description">60 karakter sınırı</p>
     </div>
     <div class="crayons-field">
       <%= f.label :summary, class: "crayons-field__label" %>
       <%= f.text_area :summary, maxlength: 250, class: "crayons-textfield" %>
-      <p class="crayons-field__description">Limit of 250 characters</p>
+      <p class="crayons-field__description">250 karakter sınırı</p>
     </div>
 
     <%= render partial: "shared/logo_design", locals: { f: f, account: @organization_membership.organization } %>
@@ -151,30 +151,30 @@
     <div class="crayons-field">
       <%= f.label :location, class: "crayons-field__label" %>
       <%= f.text_field :location, maxlength: 64, class: "crayons-textfield", placeholder: "Halifax, Nova Scotia" %>
-      <p class="crayons-field__description">Limit of 64 characters</p>
+      <p class="crayons-field__description">64 karakterle sınırlıdır</p>
     </div>
     <div class="crayons-field">
       <%= f.label :email, "Support email", class: "crayons-field__label" %>
       <%= f.text_field :email, maxlength: 64, placeholder: "mail@example.com", class: "crayons-textfield" %>
-      <p class="crayons-field__description">Limit of 64 characters</p>
+      <p class="crayons-field__description">64 karakterle sınırlıdır</p>
     </div>
     <div class="crayons-field">
       <%= f.label :company_size, "Organization size", class: "crayons-field__label" %>
       <%= f.text_field :company_size, maxlength: 7, placeholder: "...", class: "crayons-textfield" %>
-      <p class="crayons-field__description">Enter a number</p>
+      <p class="crayons-field__description">Bir numara girin</p>
     </div>
     <div class="crayons-field">
       <%= f.label :story, "Our story", class: "crayons-field__label" %>
       <%= f.text_area :story, maxlength: 640, placeholder: "...", class: "crayons-textfield" %>
-      <p class="crayons-field__description">Limit of 640 characters</p>
+      <p class="crayons-field__description">640 karakterle sınırlıdır</p>
     </div>
     <div class="crayons-field">
       <%= f.label :tech_stack, "Our stack", class: "crayons-field__label" %>
       <%= f.text_area :tech_stack, maxlength: 640, placeholder: "...", class: "crayons-textfield" %>
-      <p class="crayons-field__description">Limit of 640 characters</p>
+      <p class="crayons-field__description">640 karakterle sınırlıdır</p>
     </div>
     <header>
-      <h3 class="mb-2">Call-to-action box</h3>
+      <h3 class="mb-2">Harekete geçirici mesaj kutusu</h3>
       <p>
         Customizable text that appears to the right of every post for your organization.
         See an example from the <a href="<%= app_url("/devteam/the-dev-badge-is-available-on-font-awesome-2ihe") %>" target="_blank" rel="noopener">DEV Team</a>.

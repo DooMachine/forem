@@ -139,15 +139,15 @@
       <div class="modal-content " id="new-message-modal">
         <button title="Close" class="close-modal">X</button>
         <% if @user.inbox_guidelines.present? %>
-          <p><b>@<%= @user.username %>'s guidelines:</b></p>
+          <p><b>@<%= @user.username %>'s kılavuzu:</b></p>
           <p><%= @user.inbox_guidelines %></p>
         <% end %>
         <form id="new-message-form" class="message-form" data-info='{"id":<%= @user.id %>,"className":"<%= @user.class.name %>","username":"<%= @user.username %>", "showChat":"<%= @user.inbox_type %>"}'>
           <textarea id="new-message" rows="4" cols="70" placeholder="Enter your message here..."></textarea>
-          <button type="submit" value="Submit" class="submit-message cta">SEND</button>
+          <button type="submit" value="Submit" class="submit-message cta">GÖDNER</button>
         </form>
         <p>
-          <em>All private interactions <b>must</b> abide by the <a href="/code-of-conduct">code of conduct</a></em>
+          <em>Tüm özel etkileşimler <a href="/code-of-conduct"> davranış kurallarına </a> <b> uymalıdır </b></em>
         </p>
       </div>
     </div>
@@ -157,7 +157,7 @@
         <%= image_tag("overflow-horizontal.svg", class: "dropdown-icon", alt: "Toggle dropdown menu") %>
       </button>
       <div id="user-profile-dropdownmenu" class="profile-dropdownmenu">
-        <button id="user-profile-dropdownmenu-block-button" data-profile-user-id="<%= @user.id %>" class="block-button" type="button">Block @<%= @user.username %></button>
+        <button id="user-profile-dropdownmenu-block-button" data-profile-user-id="<%= @user.id %>" class="block-button" type="button">@<%= @user.username %> kullanıcısını engelle</button>
         <% if user_signed_in? %>
           <%= javascript_packs_with_chunks_tag "profileDropdown", defer: true %>
         <% end %>

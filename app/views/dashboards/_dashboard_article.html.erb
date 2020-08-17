@@ -4,7 +4,7 @@
       <span class="dashboard-top-pill"><%= article.organization&.name %></span>
     <% end %>
     <% if article.collection_id %>
-      <span class="dashboard-top-pill"><strong>Series:</strong> <%= article.series %></span>
+      <span class="dashboard-top-pill"><strong>Seriler:</strong> <%= article.series %></span>
     <% end %>
   </div>
 
@@ -25,12 +25,12 @@
   <div class="dashboard-meta-details">
     <% if article.published %>
       <span>
-        Published: <time datetime="<%= article.published_timestamp %>"><%= article.readable_publish_date %></time>
+        Yayınlanma tarihi: <time datetime="<%= article.published_timestamp %>"><%= article.readable_publish_date %></time>
       </span>
 
       <% if article.edited? %>
         <span>
-          · Edited: <time datetime="<%= article.edited_at.utc.iso8601 %>"><%= article.readable_edit_date %></time>
+          · Düzenlenme tarihi: <time datetime="<%= article.edited_at.utc.iso8601 %>"><%= article.readable_edit_date %></time>
         </span>
       <% end %>
 
@@ -41,28 +41,28 @@
   </div>
   <div class="dashboard-actions">
     <% if !article.published %>
-      <a href="<%= article.current_state_path %>" class="pill cta yellow">DRAFT</a>
+      <a href="<%= article.current_state_path %>" class="pill cta yellow">TASLAK</a>
     <% end %>
-    <a href="<%= article.path %>/edit" class="pill cta green">EDIT</a>
+    <a href="<%= article.path %>/edit" class="pill cta green">DÜZENLE</a>
     <% if manage_view %>
-      <a href="<%= article.path %>/delete_confirm" data-no-instant class="cta pill black">DELETE</a>
+      <a href="<%= article.path %>/delete_confirm" data-no-instant class="cta pill black">SİL</a>
       <% if article.profile_pins.any? %>
         <%= form_for(article.profile_pins.first) do |f| %>
-          <button class="pill cta">UNPIN</button>
+          <button class="pill cta">SABITLEMEKTEN ÇIKAR</button>
         <% end %>
       <% else %>
         <%= form_for(ProfilePin.new) do |f| %>
           <%= f.hidden_field :pinnable_id, value: article.id %>
-          <button class="pill cta">PIN TO PROFILE</button>
+          <button class="pill cta">PROFILINE SABITLE</button>
         <% end %>
       <% end %>
     <% elsif article.published %>
-      <a href="<%= article.path %>/manage" class="cta pill black">MANAGE</a>
+      <a href="<%= article.path %>/manage" class="cta pill black">YÖNET</a>
     <% elsif @user == article.user %>
-      <a href="<%= article.path %>/delete_confirm" data-no-instant class="cta pill black">DELETE</a>
+      <a href="<%= article.path %>/delete_confirm" data-no-instant class="cta pill black">SİL</a>
     <% end %>
     <% if @current_user_pro %>
-      <a href="<%= article.path %>/stats" data-no-instant class="cta pill blue">STATS</a>
+      <a href="<%= article.path %>/stats" data-no-instant class="cta pill blue">İSTATİSTİKLER</a>
     <% end %>
 
     <% if article.published %>
@@ -72,10 +72,10 @@
             <% if article.page_views_count > 25 %>
                <span class="value"><%= article.page_views_count %></span>
             <% else %>
-              under 25
+              25 altı
             <% end %>
           </span>
-          views
+          görüntüleme
         </span>
         //
         <span class="reactions-count">
@@ -97,7 +97,7 @@
   <% if organization && org_admin %>
     <%= form_for(article) do |f| %>
       <input type="hidden" name="destination" value="/dashboard/organization/<%= organization.id %>" />
-      AUTHOR: <%= f.select(:user_id, options_for_select(organization.users.pluck(:name, :id), article.user_id)) %>
+      YAZAR: <%= f.select(:user_id, options_for_select(organization.users.pluck(:name, :id), article.user_id)) %>
       <%= f.submit "SUBMIT AUTHOR CHANGE", class: "cta pill black" %>
     <% end %>
   <% end %>

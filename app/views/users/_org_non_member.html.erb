@@ -5,11 +5,11 @@
   <%= form_tag "/users/join_org" do %>
     <div class="crayons-field mb-6">
       <%= label_tag :org_secret, "Secret code", class: "crayons-field__label" %>
-      <p class="crayons-field__description">Provided to you by an org admin</p>
+      <p class="crayons-field__description">Size bir kuruluş yöneticisi tarafından sağlanmıştır</p>
       <%= text_field_tag :org_secret, nil, placeholder: "...", class: "crayons-textfield", autocomplete: "off" %>
     </div>
 
-    <button class="crayons-btn" type="submit">Join Organization</button>
+    <button class="crayons-btn" type="submit">Kuruluşa Katıl</button>
   <% end %>
 </div>
 
@@ -17,8 +17,8 @@
 
 <div class="crayons-card grid gap-6 p-6 mb-6">
   <header>
-    <h3 class="mb-2">Create An Organization</h3>
-    <p>Starred fields are required</p>
+    <h3 class="mb-2">Bir Kuruluş Oluşturun</h3>
+    <p>Yıldızlı alanlar zorunludur</p>
   </header>
 
   <%= form_for @organization, html: { class: "grid gap-6" } do |f| %>
@@ -29,7 +29,7 @@
     <div class="crayons-field">
       <%= f.label :slug, "Username *", class: "crayons-field__label" %>
       <%= f.text_field :slug, class: "crayons-textfield", placeholder: "acmeinc" %>
-      <p class="crayons-field__description">Your organization URL will be <%= app_url %>/{username}</p>
+      <p class="crayons-field__description">Kuruluş URL'niz <% = app_url%>/{username} olacaktır</p>
     </div>
 
     <div class="crayons-field">
@@ -61,11 +61,11 @@
 
     <div class="crayons-field">
       <%= f.label :proof, "Proof *", class: "crayons-field__label" %>
-      <p class="crayons-field__description">This is just a quick blurb indicating or link that shows that you clearly are associated with this organization.</p>
+      <p class="crayons-field__description">Bu sadece, bu kuruluşla açıkça ilişkili olduğunuzu gösteren kısa bir tanıtım veya bağlantıdır..</p>
       <%= f.text_area :proof, placeholder: "...", class: "crayons-textfield" %>
-      <p class="crayons-field__description">You must have your organization's permission to submit this form. Dishonesty may result in a permanent suspension.</p>
+      <p class="crayons-field__description">Bu formu göndermek için kuruluşunuzun iznine sahip olmanız gerekir. Sahtekârlık kalıcı olarak askıya alınmasına neden olabilir.</p>
     </div>
 
-    <div><button class="crayons-btn" type="submit">Create Organization</button></div>
+    <div><button class="crayons-btn" type="submit">Kuruluş Oluşturun</button></div>
   <% end %>
 </div>

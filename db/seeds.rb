@@ -124,8 +124,8 @@ end
 ##############################################################################
 
 seeder.create_if_none(Tag) do
-  tags = %w[beginners career computerscience git go
-            java javascript linux productivity python security webdev]
+  tags = %w[yenibaşlayanlar kariyer bilgisayarbilimi git go
+            java javascript linux verimlilik python güvenlik web c c++ algoritmalar]
 
   tags.each do |tag_name|
     Tag.create!(
@@ -220,7 +220,7 @@ seeder.create_if_none(Podcast) do
       published: true
     },
     {
-      title: "Talk Python",
+      title: "Python GÜNDEMİ",
       description: "",
       feed_url: "https://talkpython.fm/episodes/rss",
       slug: "talkpython",
@@ -229,20 +229,6 @@ seeder.create_if_none(Podcast) do
       main_color_hex: "181a1c",
       overcast_url: "https://overcast.fm/itunes979020229/talk-python-to-me",
       android_url: "https://subscribeonandroid.com/talkpython.fm/episodes/rss",
-      image: Rack::Test::UploadedFile.new(image_file, "image/jpeg"),
-      published: true
-    },
-    {
-      title: "Developer on Fire",
-      description: "",
-      feed_url: "http://developeronfire.com/rss.xml",
-      itunes_url: "https://itunes.apple.com/us/podcast/developer-on-fire/id1006105326",
-      slug: "developeronfire",
-      twitter_username: "raelyard",
-      website_url: "http://developeronfire.com",
-      main_color_hex: "343d46",
-      overcast_url: "https://overcast.fm/itunes1006105326/developer-on-fire",
-      android_url: "http://subscribeonandroid.com/developeronfire.com/rss.xml",
       image: Rack::Test::UploadedFile.new(image_file, "image/jpeg"),
       published: true
     },
@@ -257,32 +243,30 @@ end
 
 seeder.create_if_none(Broadcast) do
   broadcast_messages = {
-    set_up_profile: "Welcome to DEV! 👋 I'm Sloan, the community mascot and I'm here to help get you started. " \
-      "Let's begin by <a href='/settings'>setting up your profile</a>!",
-    welcome_thread: "Sloan here again! 👋 DEV is a friendly community. " \
-      "Why not introduce yourself by leaving a comment in <a href='/welcome'>the welcome thread</a>!",
-    twitter_connect: "You're on a roll! 🎉 Do you have a Twitter account? " \
-      "Consider <a href='/settings'>connecting it</a> so we can @mention you if we share your post " \
-      "via our Twitter account <a href='https://twitter.com/thePracticalDev'>@thePracticalDev</a>.",
-    github_connect: "You're on a roll! 🎉  Do you have a GitHub account? " \
-      "Consider <a href='/settings'>connecting it</a> so you can pin any of your repos to your profile.",
-    customize_feed: "Hi, it's me again! 👋 Now that you're a part of the DEV community, let's focus on personalizing " \
-      "your content. You can start by <a href='/tags'>following some tags</a> to help customize your feed! 🎉",
-    customize_experience: "Sloan here! 👋 Did you know that that you can customize your DEV experience? " \
-      "Try changing <a href='settings/ux'>your font and theme</a> and find the best style for you!",
-    start_discussion: "Sloan here! 👋 I noticed that you haven't " \
-      "<a href='https://dev.to/t/discuss'>started a discussion</a> yet. Starting a discussion is easy to do; " \
-      "just click on 'Write a Post' in the sidebar of the tag page to get started!",
-    ask_question: "Sloan here! 👋 I noticed that you haven't " \
-      "<a href='https://dev.to/t/explainlikeimfive'>asked a question</a> yet. Asking a question is easy to do; " \
-      "just click on 'Write a Post' in the sidebar of the tag page to get started!",
-    discuss_and_ask: "Sloan here! 👋 I noticed that you haven't " \
-      "<a href='https://dev.to/t/explainlikeimfive'>asked a question</a> or " \
-      "<a href='https://dev.to/t/discuss'>started a discussion</a> yet. It's easy to do both of these; " \
-      "just click on 'Write a Post' in the sidebar of the tag page to get started!",
-    download_app: "Sloan here, with one last tip! 👋 Have you downloaded the DEV mobile app yet? " \
-      "Consider <a href='https://dev.to/downloads'>downloading</a> it so you can access all " \
-      "of your favorite DEV content on the go!"
+    set_up_profile: "DEVLOBI'ye hoş geldiniz! 👋 Ben Lobbi, topluluk maskotuyum ve başlamanıza yardımcı olmak için buradayım. " \
+      "<a href='/settings'> Profilinizi oluşturarak </a> başlayalım!",
+    welcome_thread: "Burada tekrar SONLANDIR! 👋 DEVLOBI dost canlısı bir topluluktur. " \
+      "Neden <a href='/welcome'> hoş geldiniz başlığına </a> bir yorum bırakarak kendinizi tanıtmıyorsunuz!",
+    twitter_connect: "Twitter hesabın var mı? " \
+      "Twitter hesabınızı <a href='/settings'>bağlarsanız</a> profilinizi etiketleyerek twitter " \
+      "sayfamızda paylaşabiliriz <a href='https://twitter.com/devlobicom'>@devlobicom</a>.",
+    github_connect: "Lobbi geldi! 🎉  GitHub hesabınız var mı? " \
+      "Repolarınızdan herhangi birini profilinize sabitleyebilmek için hesaınızı <a href='/settings'> bağlamalısınız </a>.",
+    customize_feed: "Merhaba, yine ben! 👋 Artık DEVLOBI topluluğunun bir parçası olduğunuza göre, içeriğinizi kişiselleştirmeye odaklanalım. " \
+      "Anasayfanız'ı özelleştirmeye yardımcı olması için <a href='/tags'> bazı etiketleri takip ederek </a> başlayabilirsiniz!🎉",
+    customize_experience: "Lobbi geldi! 👋 DEVLOBI deneyiminizi özelleştirebileceğinizi biliyor muydunuz?? " \
+      "<a href='settings/ux'> Yazı tipinizi ve temanızı </a> değiştirmeyi deneyin ve sizin için en iyi stili bulun!",
+    start_discussion: "Lobbi geldi! 👋 Farkettim ki " \
+      "<a href='https://DEVLOBI.to/t/discuss'>tartışma başlat</a>mamışsınız. Hemen başlatmak için; " \
+      "etiket sayfasının kenar çubuğundaki "Gönderi ekle" yi tıklamanız yeterli!",
+    ask_question: "Lobbi geldi! 👋 Farkettim ki" \
+      "<a href='https://DEVLOBI.to/t/explainlikeimfive'>soru sor</a>mamışsınız. Hemen sormak için; " \
+      "etiket sayfasının kenar çubuğundaki "Gönderi ekle" yi tıklamanız yeterli!",
+    discuss_and_ask: "Lobbi geldi! 👋 Farkettim ki " \
+      "<a href='https://DEVLOBI.to/t/explainlikeimfive'>soru sor</a>mamışsınız veya " \
+      "<a href='https://DEVLOBI.to/t/discuss'>tartışma başlat</a>mamışsınız. Bunların ikisini de yapmak çok kolay; " \
+      "etiket sayfasının kenar çubuğundaki "Gönderi ekle" yi tıklamanız yeterli!",
+    download_app: "Lobbi geldi! 👋, mobil aplikasyonlar yakında sizlerle olacak!"
   }
 
   broadcast_messages.each do |type, message|
@@ -296,20 +280,20 @@ seeder.create_if_none(Broadcast) do
 
   welcome_thread_content = <<~HEREDOC
     ---
-    title: Welcome Thread - v0
+    title: Tanışma Partisi - v0
     published: true
-    description: Introduce yourself to the community!
-    tags: welcome
+    description: Kendinizi tanıtın!
+    tags: tanışma
     ---
 
-    Hey there! Welcome to #{ApplicationConfig['COMMUNITY_NAME']}!
+    Selam! #{ApplicationConfig['COMMUNITY_NAME']}'ye hoşgeldin!
 
-    Leave a comment below to introduce yourself to the community!✌️
+    Kendinizi tanıtmak için aşağıya bir yorum bırakın!✌️
   HEREDOC
 
   Article.create!(
     body_markdown: welcome_thread_content,
-    user: User.dev_account || User.first,
+    user: User.DEVLOBI_account || User.first,
   )
 end
 
@@ -409,40 +393,40 @@ end
 seeder.create_if_none(ListingCategory) do
   categories = [
     {
-      slug: "cfp",
+      slug: "sfp",
       cost: 1,
-      name: "Conference CFP",
+      name: "Konferans SFP",
       rules: "Currently open for proposals, with link to form."
     },
     {
-      slug: "education",
+      slug: "eğitim",
       cost: 1,
-      name: "Education/Courses",
-      rules: "Educational material and/or schools/bootcamps."
+      name: "Eğitim/Kurslar",
+      rules: "Eğitim materyali ve/veya okullar/eğitim kampları."
     },
     {
-      slug: "jobs",
+      slug: "işilanları",
       cost: 25,
-      name: "Job Listings",
-      rules: "Companies offering employment right now."
+      name: "İş İlanları",
+      rules: "Şu anda istihdam sunan şirketler."
     },
     {
-      slug: "forsale",
+      slug: "satılık",
       cost: 1,
-      name: "Stuff for Sale",
+      name: "Satılık Eşya",
       rules: "Personally owned physical items for sale."
     },
     {
-      slug: "events",
+      slug: "etkinlikler",
       cost: 1,
-      name: "Upcoming Events",
-      rules: "In-person or online events with date included."
+      name: "Yaklaşan Etkinlikler",
+      rules: "Yüz yüze veya tarih içeren çevrimiçi etkinlikler."
     },
     {
-      slug: "misc",
+      slug: "diğer",
       cost: 1,
-      name: "Miscellaneous",
-      rules: "Must not fit in any other category."
+      name: "Diğer",
+      rules: "Başka hiçbir kategoriye uymamalıdır."
     },
   ].freeze
 
@@ -510,26 +494,20 @@ puts <<-ASCII
   ```````````````````````````````````````````````````````````````````````````
   ```````````````````````````````````````````````````````````````````````````
   ```````````````````````````````````````````````````````````````````````````
-  ```````````````````````````````````````````````````````````````````````````
-  ``````````````-oooooooo/-``````.+ooooooooo:``+ooo+````````oooo/````````````
-  ``````````````+MMMMMMMMMMm+```-NMMMMMMMMMMs``+MMMM:``````/MMMM/````````````
-  ``````````````+MMMNyyydMMMMy``/MMMMyyyyyyy/```mMMMd``````mMMMd`````````````
-  ``````````````+MMMm````:MMMM.`/MMMN```````````/MMMM/````/MMMM:`````````````
-  ``````````````+MMMm````.MMMM-`/MMMN````````````dMMMm````mMMMh``````````````
-  ``````````````+MMMm````.MMMM-`/MMMMyyyy+```````:MMMM/``+MMMM-``````````````
-  ``````````````+MMMm````.MMMM-`/MMMMMMMMy````````hMMMm``NMMMy```````````````
-  ``````````````+MMMm````.MMMM-`/MMMMoooo:````````-MMMM+oMMMM-```````````````
-  ``````````````+MMMm````.MMMM-`/MMMN``````````````yMMMmNMMMy````````````````
-  ``````````````+MMMm````+MMMM.`/MMMN``````````````.MMMMMMMM.````````````````
-  ``````````````+MMMMdddNMMMMo``/MMMMddddddd+```````sMMMMMMs`````````````````
-  ``````````````+MMMMMMMMMNh:```.mMMMMMMMMMMs````````yMMMMs``````````````````
-  ``````````````.///////:-````````-/////////-`````````.::.```````````````````
+  `````````     888                   888          888      d8b`````````````` 
+  `````````     888                   888          888      Y8P`````````````` 
+  `````````     888                   888          888         `````````````` 
+  ````````` .d88888  .d88b.  888  888 888  .d88b.  88888b.  888`````````````` 
+  `````````d88" 888 d8P  Y8b 888  888 888 d88""88b 888 "88b 888`````````````` 
+  `````````888  888 88888888 Y88  88P 888 888  888 888  888 888`````````````` 
+  `````````Y88b 888 Y8b.      Y8bd8P  888 Y88..88P 888 d88P 888`````````````` 
+  ````````` "Y88888  "Y8888    Y88P   888  "Y88P"  88888P"  888`````````````` 
   ```````````````````````````````````````````````````````````````````````````
   ```````````````````````````````````````````````````````````````````````````
   ```````````````````````````````````````````````````````````````````````````
   ```````````````````````````````````````````````````````````````````````````
 
-  All done!
+  Hepsi tamam!
 ASCII
 
 # rubocop:enable Rails/Output

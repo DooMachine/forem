@@ -45,7 +45,7 @@ function initializeCommentsPage() {
                   var buttEl = document.getElementById('button-for-comment-' + allNodes[i].dataset.commentId);
                   if (userActionsEl && buttEl) {
                     userActionsEl.className = 'current-user-actions';
-                    userActionsEl.innerHTML = '<a data-no-instant href="' + userActionsEl.parentNode.dataset.path + '/delete_confirm" class="edit-butt">DELETE</a>\
+                    userActionsEl.innerHTML = '<a data-no-instant href="' + userActionsEl.parentNode.dataset.path + '/delete_confirm" class="edit-butt">SİL</a>\
                                                 <a href="' + userActionsEl.parentNode.dataset.path + '/edit">EDIT</a>'
                     userActionsEl.style.display = 'inline-block';
                     document.getElementById('button-for-comment-' + allNodes[i].dataset.commentId).classList.add('reacted');
@@ -159,7 +159,7 @@ function toggleCodeOfConduct() {
   var checkboxWrapper = document.getElementById('toggle-code-of-conduct-checkbox');
   if (checkboxWrapper && !codeOfConduct) {
     checkboxWrapper.innerHTML = '<input type="checkbox" name="checked_code_of_conduct" class="checkbox" required/>\
-                                  <label for="checked_code_of_conduct">I\'ve read the <a href="<%= URL.url('code-of-conduct') %>">code of conduct</a></label>'
+                                  <label for="checked_code_of_conduct"><a href="<%= URL.url('code-of-conduct') %>">Davranış kurallari</a>\'nı okudum</label>'
   }
 }
 
@@ -167,10 +167,10 @@ function replaceActionButts(el) {
   var loggedInActionButts = "";
   var wrapper = el.getElementsByClassName("actions")[0]
   if (el.dataset.currentUserComment == "true") {
-    loggedInActionButts = '<a data-no-instant href="' + el.parentNode.parentNode.dataset.path + '/delete_confirm" class="edit-butt">DELETE</a>\
+    loggedInActionButts = '<a data-no-instant href="' + el.parentNode.parentNode.dataset.path + '/delete_confirm" class="edit-butt">SİL</a>\
                             <a href="' + el.parentNode.parentNode.dataset.path + '/edit">EDIT</a>'
   }
-  wrapper.innerHTML = '<span class="current-user-actions">' + loggedInActionButts + '</span><a href="#" class="toggle-reply-form">REPLY</a>';
+  wrapper.innerHTML = '<span class="current-user-actions">' + loggedInActionButts + '</span><a href="#" class="toggle-reply-form">YANITLA</a>';
 }
 
 function warmNewCommentsArea() {

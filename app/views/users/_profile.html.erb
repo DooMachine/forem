@@ -10,7 +10,7 @@
       <a href="<%= user_url(current_user) || "#" %>" aria-label="Go to your profile page" class="mr-2">
         <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="<%= community_name %> badge" height="32" width="32" class="dev-badge crayons-icon" />
       </a>
-      <p>Add the <%= community_name %> badge to your personal site. <a href="/p/badges">Click here for the code</a>.</p>
+      <p><% = Community_name%> rozetini kişisel sitenize ekleyin. <a href="/p/badges"> Kod için burayı tıklayın</a>.</p>
     </div>
   </div>
 <% end %>
@@ -86,35 +86,35 @@
     <div class="crayons-field">
       <%= f.label :mostly_work_with, "Skills/Languages", class: "crayons-field__label" %>
       <%= f.text_area :mostly_work_with, maxlength: 500, class: "crayons-textfield", rows: 5 %>
-      <p class="crayons-field__description">What tools and languages are you most experienced with? Are you specialized or more of a generalist?</p>
+      <p class="crayons-field__description">En çok hangi araç ve dillerle deneyimlisiniz? Uzman mısınız yoksa daha genelci misiniz?</p>
     </div>
 
     <div class="crayons-field">
       <%= f.label :currently_learning, "I'm getting into", class: "crayons-field__label" %>
       <%= f.text_area :currently_learning, maxlength: 500, class: "crayons-textfield", rows: 5 %>
-      <p class="crayons-field__description">What are you learning right now? What are the new tools and languages you're picking up in <%= Time.zone.now.year %>?</p>
+      <p class="crayons-field__description">Şu an ne öğreniyorsun? <% = Time.zone.now.year%> yılında edindiğiniz yeni araçlar ve diller nelerdir?</p>
     </div>
 
     <div class="crayons-field">
       <%= f.label :currently_hacking_on, "My projects and hacks", class: "crayons-field__label" %>
       <%= f.text_area :currently_hacking_on, maxlength: 500, class: "crayons-textfield", rows: 5 %>
-      <p class="crayons-field__description">What projects are currently occupying most of your time?</p>
+      <p class="crayons-field__description">Şu anda hangi projeler zamanınızın çoğunu meşgul ediyor?</p>
     </div>
 
     <div class="crayons-field">
       <%= f.label :available_for, class: "crayons-field__label" %>
       <%= f.text_area :available_for, maxlength: 500, class: "crayons-textfield", rows: 5 %>
-      <p class="crayons-field__description">What kinds of collaborations or discussions are you available for? What's a good reason to say <em>Hey!</em> to you these days?</p>
+      <p class="crayons-field__description">Ne tür işbirliklerine veya tartışmalara hazırsınız? Bugünlerde size <em> Hey! </em> demek için iyi bir neden nedir?</p>
     </div>
   </div>
 
   <div class="crayons-card mb-6 grid gap-4 p-6">
-    <h2>Branding</h2>
+    <h2>Marka</h2>
     <%= render partial: "shared/logo_design", locals: { f: f, account: @user } %>
   </div>
 
   <div class="crayons-card mb-6 grid gap-4 p-6">
-    <h2>Work opportunities settings</h2>
+    <h2>İş fırsatları ayarları</h2>
     <div class="crayons-field crayons-field--checkbox">
       <%= f.check_box :looking_for_work, class: "crayons-checkbox" %>
       <%= f.label :looking_for_work, class: "crayons-field__label" %>
@@ -132,7 +132,7 @@
   </div>
 
   <div class="crayons-card mb-6 grid gap-6 p-6">
-    <h2>Links</h2>
+    <h2>Bağlantılar</h2>
 
     <div class="crayons-field">
       <%= f.label :facebook_url, "Facebook profile URL", class: "crayons-field__label" %>
@@ -193,7 +193,7 @@
   <div class="save-footer crayons-card mb-6 grid gap-6 p-6">
     <%= f.hidden_field :tab, value: @tab %>
     <div>
-      <button type="submit" class="crayons-btn">Save</button>
+      <button type="submit" class="crayons-btn">Kaydet</button>
     </div>
   </div>
 
