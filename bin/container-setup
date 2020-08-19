@@ -89,7 +89,7 @@ if [ "${CONTAINER_RUNTIME}" = "docker" ]; then
     sleep 10
   fi
 
-  docker-compose up
+  docker-compose --verbose up -d
 
 elif [ "${CONTAINER_RUNTIME}" = "podman" ]; then
 
