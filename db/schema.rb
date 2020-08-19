@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_09_200631) do
+ActiveRecord::Schema.define(version: 2020_08_18_101700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -923,6 +923,7 @@ ActiveRecord::Schema.define(version: 2020_08_09_200631) do
 
   create_table "profile_fields", force: :cascade do |t|
     t.boolean "active", default: true, null: false
+    t.string "attribute_name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.string "description"
     t.string "group"
@@ -1348,7 +1349,13 @@ ActiveRecord::Schema.define(version: 2020_08_09_200631) do
   add_foreign_key "chat_channel_memberships", "users"
   add_foreign_key "classified_listings", "classified_listing_categories"
   add_foreign_key "classified_listings", "users", on_delete: :cascade
+  add_foreign_key "display_ad_events", "display_ads", on_delete: :cascade
+  add_foreign_key "display_ad_events", "users", on_delete: :cascade
   add_foreign_key "email_authorizations", "users", on_delete: :cascade
+  add_foreign_key "html_variant_successes", "articles", on_delete: :nullify
+  add_foreign_key "html_variant_successes", "html_variants", on_delete: :cascade
+  add_foreign_key "html_variant_trials", "articles", on_delete: :nullify
+  add_foreign_key "html_variant_trials", "html_variants", on_delete: :cascade
   add_foreign_key "identities", "users", on_delete: :cascade
   add_foreign_key "messages", "chat_channels"
   add_foreign_key "messages", "users"
